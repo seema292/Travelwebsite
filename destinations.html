@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All National Parks &amp; Tiger Reserves | Wild Path Safari Destinations</title>
+    <meta name="description" content="Explore India's premier wildlife destinations — Corbett, Ranthambore, Tadoba, Kaziranga, Gir, Bandhavgarh, Kanha and Pench with zones, pricing, best seasons and sighting data.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhance.css">
+</head>
+<body class="grain-overlay">
+
+    <aside class="top-bar">
+        <div class="container-custom">
+            <div class="top-bar-inner">
+                <ul class="top-contact-list">
+                    <li class="top-contact-item"><i data-lucide="phone" style="color:var(--safari-gold-light);"></i><span>Safari Desk: <a href="tel:+919911177045">+91 99111 77045</a> | <a href="tel:+919654852568">+91 96548 52568</a></span></li>
+                    <li class="top-contact-item"><i data-lucide="mail" style="color:var(--safari-gold-light);"></i><a href="mailto:safari@wildpathsafari.com">safari@wildpathsafari.com</a></li>
+                    <li class="top-contact-item"><i data-lucide="clock" style="color:var(--safari-gold-light);"></i><span>Office Hours: 06:00 AM – 10:30 PM (All 7 Days)</span></li>
+                </ul>
+                <!-- <div class="top-bar-action">
+                    <button type="button" class="top-enquiry-btn" onclick="openEnquiryModal()">
+                        <i data-lucide="message-square"></i> Quick Enquiry
+                    </button>
+                </div> -->
+            </div>
+        </div>
+    </aside>
+
+    <header class="main-navbar">
+        <div class="container-custom">
+            <div class="navbar-wrap">
+                <a href="index.html" class="brand-logo">
+                    <img src="images/logo.png" alt="Wild Path Safari" class="brand-logo-img">
+                    <div class="brand-text-wrap">
+                        <span class="brand-name">WILD PATH <span>SAFARI</span></span>
+                        <span class="brand-tagline">Wildlife Safaris &amp; Expeditions</span>
+                    </div>
+                </a>
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item active"><a href="destinations.html" class="nav-link">Destinations</a></li>
+                        <li class="nav-item"><a href="packages.html" class="nav-link">Packages</a></li>
+                        <li class="nav-item"><a href="safari-booking.html" class="nav-link">Live Safari Booking</a></li>
+                        <li class="nav-item"><a href="paynow.html" class="nav-link" style="color:var(--safari-terracotta);"><i data-lucide="credit-card"></i> Pay Now</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions">
+                    <a href="safari-booking.html" class="btn-safari-primary"><i data-lucide="calendar-check"></i> Plan Safari</a>
+                    <button class="mobile-nav-toggle" aria-label="Toggle navigation"><i data-lucide="menu"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container-custom">
+            <div class="page-breadcrumb"><a href="index.html">Home</a> <i data-lucide="chevron-right"></i> <span>Destinations</span></div>
+            <span class="page-hero-eyebrow"><i data-lucide="compass"></i> Premier Wildlife Sanctuaries</span>
+            <h1 class="page-hero-title">Explore India's <span>Wild Kingdoms</span></h1>
+            <p class="page-hero-subtitle">
+                From the sal forests of Corbett to the lion kingdom of Gir and the rhino savannas of Kaziranga — browse every national park with regulated zones, transparent permit pricing, sighting probabilities and seasonal schedules.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container-custom">
+            <div class="filter-tabs">
+                <button type="button" class="filter-tab-btn active" data-filter="all">All Sanctuaries</button>
+                <button type="button" class="filter-tab-btn" data-filter="north">Northern Tigers</button>
+                <button type="button" class="filter-tab-btn" data-filter="central">Central India Heartland</button>
+                <button type="button" class="filter-tab-btn" data-filter="west">Western &amp; Lions</button>
+                <button type="button" class="filter-tab-btn" data-filter="east">North-East Rhinos</button>
+            </div>
+
+            <div class="parks-grid" id="allParksGrid"></div>
+        </div>
+    </section>
+
+    <!-- Zone & pricing detail accordion per park -->
+    <section class="section-padding" style="background:var(--parchment);">
+        <div class="container-custom">
+            <div class="section-header">
+                <span class="section-eyebrow"><i data-lucide="layers"></i> Zones, Pricing &amp; Rules</span>
+                <h2 class="section-title">Detailed Park Guide</h2>
+                <p class="section-subtitle">Every reserve's core &amp; buffer zones, transparent per-gypsy pricing, best travel season and official permit rules.</p>
+            </div>
+            <div id="parkDetailAccordion" class="faq-accordion" style="max-width:960px;"></div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container-custom">
+            <div class="official-disclaimer-box">
+                <strong><i data-lucide="info"></i> Official Statutory Disclosure:</strong> Wild Path Safari is a private travel facilitation enterprise. We are <strong>NOT</strong> the official government website or Forest Department portal. Wildlife sightings cannot be guaranteed.
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col-about">
+                    <div class="footer-brand">WILD PATH <span>SAFARI</span></div>
+                    <p class="footer-bio">India's transparent wildlife safari booking and tour facilitation platform since 2012.</p>
+                    <ul class="footer-contact-items">
+                        <li><i data-lucide="map-pin"></i> Ramnagar Field Office: Ranikhet Road, Nainital, Uttarakhand - 244715</li>
+                        <li><i data-lucide="phone"></i> +91 99111 77045 / +91 96548 52568</li>
+                        <li><i data-lucide="mail"></i> safari@wildpathsafari.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-heading">Tiger Reserves</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="safari-booking.html?park=jim-corbett">Jim Corbett Safari</a></li>
+                        <li><a href="safari-booking.html?park=ranthambore">Ranthambore Safari</a></li>
+                        <li><a href="safari-booking.html?park=tadoba">Tadoba Andhari Safari</a></li>
+                        <li><a href="safari-booking.html?park=kaziranga">Kaziranga Rhino Safari</a></li>
+                        <li><a href="safari-booking.html?park=gir-lion">Gir Lion Safari</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-heading">Quick Navigation</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">All National Parks</a></li>
+                        <li><a href="packages.html">Wildlife Tour Packages</a></li>
+                        <li><a href="safari-booking.html">Live Price Calculator</a></li>
+                        <li><a href="paynow.html">Pay Online</a></li>
+                        <li><a href="contact.html">Contact Us &amp; FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-heading">Permit Rules &amp; Trust</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="contact.html#rules">Government ID Requirements</a></li>
+                        <li><a href="contact.html#cancellation">Permit Cancellation Policy</a></li>
+                        <li><a href="contact.html#privacy">Privacy &amp; Data Security</a></li>
+                        <li><a href="contact.html#terms">Terms of Facilitation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom-bar">
+                <div>© 2026 Wild Path Safari. All rights reserved.</div>
+                <div style="display:flex; gap:1.2rem;">
+                    <a href="contact.html#terms">Terms &amp; Conditions</a>
+                    <a href="contact.html#cancellation">Cancellation Policy</a>
+                    <a href="contact.html#privacy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="side-enquiry-tab" id="sideEnquiryTab" type="button" aria-label="Open Safari Inquiry Form">
+        <i data-lucide="message-square"></i> Quick Enquiry
+    </button>
+    <div class="genie-modal-backdrop" id="genieModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="genie-modal-box">
+            <span class="washi-tape"></span>
+            <i data-lucide="send" class="paper-plane-fly" id="paperPlaneFly"></i>
+            <button class="modal-close-btn" id="modalCloseBtn" type="button" aria-label="Close modal">&times;</button>
+            <div class="modal-author-strip">
+                <div class="modal-author-avatar">Js</div>
+                <div class="modal-author-meta">
+                    <span class="modal-author-eyebrow">A Note from Our Team</span>
+                    <span class="modal-author-name">Your Safari Planner</span>
+                </div>
+            </div>
+            <h3 class="modal-title-main">Let's Plan Your <mark style="background:rgba(199,138,59,0.25); padding:0 0.2rem; border-radius:4px;">Next Jungle Safari</mark></h3>
+            <p class="modal-hand-note">Leave your number &amp; I'll call you back myself — no spam, real advice.</p>
+            <form id="genieEnquiryForm">
+                <div class="modal-form-group">
+                    <label class="modal-form-label">Which park are you dreaming of? <span class="req">*</span></label>
+                    <select class="modal-control" id="genieParkSelect" required>
+                        <option value="">Choose a national park...</option>
+                        <option value="jim-corbett">Jim Corbett National Park (Uttarakhand)</option>
+                        <option value="ranthambore">Ranthambore Tiger Reserve (Rajasthan)</option>
+                        <option value="tadoba">Tadoba Andhari Tiger Reserve (Maharashtra)</option>
+                        <option value="kaziranga">Kaziranga National Park (Assam)</option>
+                        <option value="gir-lion">Gir Lion Sanctuary (Gujarat)</option>
+                        <option value="bandhavgarh">Bandhavgarh Tiger Reserve (Madhya Pradesh)</option>
+                        <option value="kanha">Kanha Tiger Reserve (Madhya Pradesh)</option>
+                        <option value="pench">Pench Tiger Reserve (Mowgli Land)</option>
+                    </select>
+                </div>
+                <div class="modal-form-group">
+                    <label class="modal-form-label">What should I call you? <span class="req">*</span></label>
+                    <input type="text" class="modal-control" id="genieName" placeholder="Your Full Name" required>
+                </div>
+                <div class="modal-form-group">
+                    <label class="modal-form-label">Best mobile number to reach you <span class="req">*</span></label>
+                    <input type="tel" class="modal-control" id="geniePhone" placeholder="+91 98765 43210 / WhatsApp" required>
+                </div>
+                <div class="modal-form-row">
+                    <div class="modal-form-group">
+                        <label class="modal-form-label">Any tentative date?</label>
+                        <input type="date" class="modal-control" id="genieDate">
+                    </div>
+                    <div class="modal-form-group">
+                        <label class="modal-form-label">Number of travelers?</label>
+                        <select class="modal-control" id="genieGuests">
+                            <option value="1">1 Traveler</option>
+                            <option value="2" selected>2 Travelers</option>
+                            <option value="3">3 Travelers</option>
+                            <option value="4">4 Travelers</option>
+                            <option value="5">5 Travelers</option>
+                            <option value="6">6 Travelers (Full Gypsy)</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="modal-submit-btn"><span>Send Enquiry Now</span> <i data-lucide="send"></i></button>
+            </form>
+            <div class="modal-foot-trust">
+                <span><i data-lucide="shield-check"></i> 100% Secure</span>
+                <span><i data-lucide="zap"></i> Instant Callback</span>
+                <span><i data-lucide="check-circle-2"></i> No Bots / Spam</span>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="whatsapp-fab" id="floatingWhatsAppBtn" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <nav class="mobile-bottom-dock">
+        <div class="dock-grid">
+            <a href="tel:+919911177045" class="dock-link"><i data-lucide="phone"></i><span>Call Us</span></a>
+            <a href="https://wa.me/919911177045" class="dock-link" target="_blank" rel="noopener"><i class="bi bi-whatsapp" style="color:#25d366;"></i><span>WhatsApp</span></a>
+            <a href="safari-booking.html" class="dock-link"><i data-lucide="calendar-check"></i><span>Book Safari</span></a>
+            <a href="destinations.html" class="dock-link active"><i data-lucide="compass"></i><span>Parks</span></a>
+        </div>
+    </nav>
+
+    <script src="data/parks.js"></script>
+    <script src="data/packages.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    (function renderDestinations() {
+        if (typeof PARKS_DATA === 'undefined') return;
+
+        // Map each park to a regional filter category used by the tabs
+        const regionByParkId = {
+            'jim-corbett': 'north',
+            'ranthambore': 'north',
+            'tadoba': 'central',
+            'bandhavgarh': 'central',
+            'kanha': 'central',
+            'pench': 'central',
+            'gir-lion': 'west',
+            'kaziranga': 'east'
+        };
+
+        const grid = document.getElementById('allParksGrid');
+        if (grid) {
+            grid.innerHTML = PARKS_DATA.map(park => {
+                const coreCount = park.zones.filter(z => z.type === 'Core').length;
+                const region = regionByParkId[park.id] || 'all';
+                return `
+                <div class="park-card" data-category="${region}">
+                    <div class="park-card-media">
+                        <img src="${park.thumbImage}" alt="${park.name}" loading="lazy">
+                        <span class="park-badge-top">${park.badge}</span>
+                        <span class="park-rating-badge"><i data-lucide="star"></i> ${park.rating} (${park.reviewsCount.toLocaleString()})</span>
+                    </div>
+                    <div class="park-card-body">
+                        <span class="park-location"><i data-lucide="map-pin"></i> ${park.state} · ${park.location}</span>
+                        <h3 class="park-title">${park.name}</h3>
+                        <p class="park-desc">${park.desc || park.tagline}</p>
+
+                        <div class="park-features-list">
+                            <span class="park-feature-tag"><i data-lucide="shield-check"></i> Govt Permits</span>
+                            <span class="park-feature-tag"><i data-lucide="layers"></i> ${coreCount} Core Zones</span>
+                            <span class="park-feature-tag"><i data-lucide="calendar"></i> ${park.bestSeason.split('(')[0].trim()}</span>
+                        </div>
+                        <div class="park-card-footer">
+                            <div class="park-price-meta">
+                                <span class="price-from-label">Gypsy From</span>
+                                <span class="price-amount">₹${park.pricing.gypsyBuffer.toLocaleString()} <small style="font-size:0.75rem; color:var(--text-muted);">/ Gypsy</small></span>
+                            </div>
+                            <div class="park-action-btns">
+                                <a href="safari-booking.html?park=${park.id}" class="btn-park-book"><i data-lucide="calendar-check"></i> Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        // Filter tabs
+        document.querySelectorAll('.filter-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                document.querySelectorAll('#allParksGrid .park-card').forEach(card => {
+                    const show = filter === 'all' || card.getAttribute('data-category') === filter;
+                    card.style.display = show ? '' : 'none';
+                });
+            });
+        });
+
+        // Detail accordion (zones + pricing + rules)
+        const acc = document.getElementById('parkDetailAccordion');
+        if (acc) {
+            acc.innerHTML = PARKS_DATA.map((park, idx) => {
+                const zones = park.zones.map(z => `
+                    <div style="display:flex; justify-content:space-between; gap:1rem; padding:0.5rem 0; border-bottom:1px solid rgba(46,42,37,0.08); font-size:0.85rem;">
+                        <span><strong>${z.name}</strong> <span class="zone-type-badge ${z.type === 'Core' ? 'badge-core' : 'badge-buffer'}">${z.type}</span><br><span style="color:var(--text-muted);">${z.desc}</span></span>
+                    </div>`).join('');
+                const rules = park.rules.map(r => `<li>${r}</li>`).join('');
+                return `
+                <div class="faq-item" id="${park.id}">
+                    <button type="button" class="faq-question">
+                        <span><i data-lucide="trees" style="color:var(--forest-mid);"></i> ${park.name} <span style="font-weight:400; color:var(--text-muted); font-size:0.82rem;">· ${park.state}</span></span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p style="margin-bottom:0.8rem;"><strong>Best Season:</strong> ${park.bestSeason}</p>
+                        <div style="display:flex; gap:0.8rem; flex-wrap:wrap; margin-bottom:1rem;">
+                            <span class="status-pill status-peak">Gypsy Core ₹${park.pricing.gypsyCore.toLocaleString()}</span>
+                            <span class="status-pill status-good">Gypsy Buffer ₹${park.pricing.gypsyBuffer.toLocaleString()}</span>
+                            <span class="status-pill status-good">Foreigner ₹${park.pricing.foreignerGypsy.toLocaleString()}</span>
+                        </div>
+                        <strong style="display:block; margin-bottom:0.4rem; color:var(--forest-deep);">Safari Zones</strong>
+                        ${zones}
+                        <strong style="display:block; margin:1rem 0 0.4rem; color:var(--forest-deep);">Key Permit Rules</strong>
+                        <ul style="padding-left:1.1rem;">${rules}</ul>
+                        <a href="safari-booking.html?park=${park.id}" class="btn-safari-gold" style="margin-top:1rem; display:inline-flex;"><i data-lucide="calendar-check"></i> Book ${park.shortName} Safari</a>
+                    </div>
+                </div>`;
+            }).join('');
+
+            acc.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => q.closest('.faq-item').classList.toggle('open'));
+            });
+        }
+
+        // Initialize lucide icons for dynamically added elements
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+        }
+
+        // Open & scroll to a specific park if hash present (e.g. #tadoba)
+        if (window.location.hash) {
+            const target = document.querySelector(window.location.hash);
+            if (target && target.classList.contains('faq-item')) {
+                target.classList.add('open');
+                setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'center' }), 150);
+            }
+        }
+    })();
+    </script>
+    <script src="js/lucide.min.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

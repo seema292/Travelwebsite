@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Safari Booking &amp; Price Calculator | Wild Path Safari</title>
+    <meta name="description" content="Book your 4x4 Gypsy or Canter wildlife safari online with transparent, real-time pricing across Corbett, Ranthambore, Tadoba, Kaziranga, Gir and more.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhance.css">
+</head>
+<body class="grain-overlay">
+
+    <!-- TOP CONTACT BAR -->
+    <aside class="top-bar">
+        <div class="container-custom">
+            <div class="top-bar-inner">
+                <ul class="top-contact-list">
+                    <li class="top-contact-item">
+                        <i data-lucide="phone" style="color:var(--safari-gold-light);"></i>
+                        <span>Safari Desk: <a href="tel:+919911177045">+91 99111 77045</a> | <a href="tel:+919654852568">+91 96548 52568</a></span>
+                    </li>
+                    <li class="top-contact-item">
+                        <i data-lucide="mail" style="color:var(--safari-gold-light);"></i>
+                        <a href="mailto:safari@wildpathsafari.com">safari@wildpathsafari.com</a>
+                    </li>
+                    <li class="top-contact-item">
+                        <i data-lucide="clock" style="color:var(--safari-gold-light);"></i>
+                        <span>Office Hours: 06:00 AM – 10:30 PM (All 7 Days)</span>
+                    </li>
+                </ul>
+                <!-- <div class="top-bar-action">
+                    <button type="button" class="top-enquiry-btn" onclick="openEnquiryModal()">
+                        <i data-lucide="message-square"></i> Quick Enquiry
+                    </button>
+                </div> -->
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN STICKY NAVIGATION -->
+    <header class="main-navbar">
+        <div class="container-custom">
+            <div class="navbar-wrap">
+                <a href="index.html" class="brand-logo">
+                    <img src="images/logo.png" alt="Wild Path Safari" class="brand-logo-img">
+                    <div class="brand-text-wrap">
+                        <span class="brand-name">WILD PATH <span>SAFARI</span></span>
+                        <span class="brand-tagline">Wildlife Safaris &amp; Expeditions</span>
+                    </div>
+                </a>
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="destinations.html" class="nav-link">Destinations</a></li>
+                        <li class="nav-item"><a href="packages.html" class="nav-link">Packages</a></li>
+                        <li class="nav-item active"><a href="safari-booking.html" class="nav-link">Live Safari Booking</a></li>
+                        <li class="nav-item"><a href="paynow.html" class="nav-link" style="color:var(--safari-terracotta);"><i data-lucide="credit-card"></i> Pay Now</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions">
+                    <a href="safari-booking.html" class="btn-safari-primary"><i data-lucide="calendar-check"></i> Plan Safari</a>
+                    <button class="mobile-nav-toggle" aria-label="Toggle navigation"><i data-lucide="menu"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container-custom">
+            <div class="page-breadcrumb">
+                <a href="index.html">Home</a> <i data-lucide="chevron-right"></i> <span>Live Safari Booking</span>
+            </div>
+            <span class="page-hero-eyebrow"><i data-lucide="binoculars"></i> Real-Time Permit Finder</span>
+            <h1 class="page-hero-title">Live Safari Booking &amp; <span>Transparent Price Calculator</span></h1>
+            <p class="page-hero-subtitle">
+                Configure your safari in four simple steps. See exactly where every rupee goes — forest permit, 4x4 Gypsy, naturalist guide and GST — with zero hidden charges before you confirm.
+            </p>
+        </div>
+    </section>
+
+    <!-- BOOKING ENGINE -->
+    <section class="section-padding">
+        <div class="container-custom">
+            <div class="booking-layout-grid">
+
+                <!-- WIZARD -->
+                <form id="fullBookingWizard" class="booking-engine-wrap" onsubmit="return false;">
+                    <div class="booking-tabs-header">
+                        <button type="button" class="booking-step-tab active" data-step="1">
+                            <span class="step-num-circle">1</span> Safari &amp; Zone
+                        </button>
+                        <button type="button" class="booking-step-tab" data-step="2">
+                            <span class="step-num-circle">2</span> Travelers
+                        </button>
+                        <button type="button" class="booking-step-tab" data-step="3">
+                            <span class="step-num-circle">3</span> Add-ons
+                        </button>
+                        <button type="button" class="booking-step-tab" data-step="4">
+                            <span class="step-num-circle">4</span> Review
+                        </button>
+                    </div>
+
+                    <div class="booking-wizard-body">
+
+                        <!-- STEP 1 -->
+                        <div class="wizard-step-pane active" id="wizardStep1">
+                            <h3 class="wizard-section-title"><i data-lucide="map-pin"></i> Choose Park, Date &amp; Shift</h3>
+                            <p class="wizard-section-sub">Select your national park, safari mode, travel date and preferred slot.</p>
+
+                            <div class="booking-field-grid">
+                                <div class="booking-field-group">
+                                    <label class="booking-field-label">National Park *</label>
+                                    <select class="modal-control" id="bookParkSelect"></select>
+                                </div>
+                                <div class="booking-field-group">
+                                    <label class="booking-field-label">Safari Mode *</label>
+                                    <select class="modal-control" id="bookModeSelect">
+                                        <option value="gypsy">4x4 Gypsy (Up to 6 Guests)</option>
+                                        <option value="canter">Open Canter (Per Seat)</option>
+                                    </select>
+                                </div>
+                                <div class="booking-field-group">
+                                    <label class="booking-field-label">Safari Date *</label>
+                                    <input type="date" class="modal-control" id="bookDateInput">
+                                </div>
+                                <div class="booking-field-group">
+                                    <label class="booking-field-label">Nationality *</label>
+                                    <select class="modal-control" id="bookNationalitySelect">
+                                        <option value="indian">Indian Citizen</option>
+                                        <option value="foreign">Foreign National</option>
+                                    </select>
+                                </div>
+                                <div class="booking-field-group">
+                                    <label class="booking-field-label">Travelers *</label>
+                                    <select class="modal-control" id="bookGuestsSelect">
+                                        <option value="1">1 Person</option>
+                                        <option value="2">2 Persons</option>
+                                        <option value="3">3 Persons</option>
+                                        <option value="4">4 Persons</option>
+                                        <option value="5">5 Persons</option>
+                                        <option value="6">6 Persons (Full Gypsy)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <h3 class="wizard-section-title" style="margin-top:1rem;"><i data-lucide="sun"></i> Safari Shift</h3>
+                            <div class="shift-radio-row">
+                                <div class="shift-radio-pill">
+                                    <input type="radio" name="bookShift" id="shiftMorning" value="morning" checked>
+                                    <label for="shiftMorning"><i data-lucide="sunrise"></i> Morning (Dawn)</label>
+                                </div>
+                                <div class="shift-radio-pill">
+                                    <input type="radio" name="bookShift" id="shiftEvening" value="evening">
+                                    <label for="shiftEvening"><i data-lucide="sunset"></i> Evening (Dusk)</label>
+                                </div>
+                                <div class="shift-radio-pill">
+                                    <input type="radio" name="bookShift" id="shiftNight" value="night">
+                                    <label for="shiftNight"><i data-lucide="moon"></i> Night Buffer</label>
+                                </div>
+                            </div>
+
+                            <h3 class="wizard-section-title" style="margin-top:1.6rem;"><i data-lucide="layers"></i> Select Safari Zone</h3>
+                            <p class="wizard-section-sub">Core zones offer the highest big-cat sighting density. Buffer zones are more affordable and allow night safaris in select parks.</p>
+                            <div class="zones-picker-grid" id="zonesPickerGrid"></div>
+
+                            <div class="wizard-nav-row" style="justify-content:flex-end;">
+                                <button type="button" class="btn-safari-gold wizard-step-next" data-next="2">
+                                    Next: Travelers <i data-lucide="arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 2 -->
+                        <div class="wizard-step-pane" id="wizardStep2">
+                            <h3 class="wizard-section-title"><i data-lucide="users"></i> Traveler Details</h3>
+                            <p class="wizard-section-sub">Forest Department permits require the full name and government photo ID of every passenger. Please enter them exactly as on the ID.</p>
+                            <div id="passengersContainer"></div>
+                            <div class="wizard-nav-row">
+                                <button type="button" class="btn-safari-primary wizard-step-prev" data-prev="1"><i data-lucide="arrow-left"></i> Back</button>
+                                <button type="button" class="btn-safari-gold wizard-step-next" data-next="3">Next: Add-ons <i data-lucide="arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 3 -->
+                        <div class="wizard-step-pane" id="wizardStep3">
+                            <h3 class="wizard-section-title"><i data-lucide="plus-circle"></i> Optional Add-ons</h3>
+                            <p class="wizard-section-sub">Enhance your safari experience. All add-ons are optional and update the live price instantly.</p>
+
+                            <div class="addon-check-row">
+                                <input type="checkbox" id="addonCamera">
+                                <label for="addonCamera"><i data-lucide="camera" style="color:var(--safari-gold);"></i> Professional DSLR / Camera Permit</label>
+                                <span class="addon-price">+ ₹500</span>
+                            </div>
+                            <div class="addon-check-row">
+                                <input type="checkbox" id="addonTransfer">
+                                <label for="addonTransfer"><i data-lucide="truck" style="color:var(--safari-gold);"></i> Resort ↔ Safari Gate Transfer</label>
+                                <span class="addon-price">+ ₹1,200</span>
+                            </div>
+                            <div class="addon-check-row">
+                                <input type="checkbox" id="addonGuide">
+                                <label for="addonGuide"><i data-lucide="user-check" style="color:var(--safari-gold);"></i> Dedicated Senior Naturalist</label>
+                                <span class="addon-price">+ ₹1,500</span>
+                            </div>
+
+                            <div class="wizard-nav-row">
+                                <button type="button" class="btn-safari-primary wizard-step-prev" data-prev="2"><i data-lucide="arrow-left"></i> Back</button>
+                                <button type="button" class="btn-safari-gold wizard-step-next" data-next="4">Next: Review <i data-lucide="arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 4 -->
+                        <div class="wizard-step-pane" id="wizardStep4">
+                            <h3 class="wizard-section-title"><i data-lucide="clipboard-check"></i> Review &amp; Confirm Permit Request</h3>
+                            <p class="wizard-section-sub">Please review the summary on the right. On confirming, we register your permit request and generate a provisional booking reference.</p>
+
+                            <div class="official-disclaimer-box" style="margin-bottom:1.5rem;">
+                                <strong><i data-lucide="info"></i> Note:</strong> Submitting this request reserves your slot subject to live Forest Department quota confirmation. Our safari desk will call you within 15 minutes to confirm and share the secure payment link.
+                            </div>
+
+                            <div class="wizard-nav-row">
+                                <button type="button" class="btn-safari-primary wizard-step-prev" data-prev="3"><i data-lucide="arrow-left"></i> Back</button>
+                                <button type="button" class="btn-safari-gold" id="btnConfirmPermitBooking"><i data-lucide="shield-check"></i> Confirm Permit Request</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
+                <!-- LIVE PRICE SUMMARY -->
+                <aside class="calc-summary-card">
+                    <h3 class="calc-summary-title"><i data-lucide="receipt"></i> Live Price Summary</h3>
+                    <div id="calcSummaryMeta" style="margin-bottom:1.2rem; padding-bottom:1rem; border-bottom:1px solid rgba(46,42,37,0.12);"></div>
+                    <ul class="calc-breakdown-list">
+                        <li class="calc-item"><span class="calc-item-label">Forest Permit Fee</span><span class="calc-item-val" id="calcPermitFee">₹0</span></li>
+                        <li class="calc-item"><span class="calc-item-label">4x4 Vehicle Charge</span><span class="calc-item-val" id="calcVehicleFee">₹0</span></li>
+                        <li class="calc-item"><span class="calc-item-label">Naturalist Guide Fee</span><span class="calc-item-val" id="calcGuideFee">₹0</span></li>
+                        <li class="calc-item"><span class="calc-item-label">Add-ons</span><span class="calc-item-val" id="calcAddonsFee">₹0</span></li>
+                        <li class="calc-item"><span class="calc-item-label">GST (5%)</span><span class="calc-item-val" id="calcTaxFee">₹0</span></li>
+                    </ul>
+                    <div class="calc-total-row">
+                        <span class="calc-total-label">Total Payable</span>
+                        <span class="calc-total-amount" id="calcTotalPayable">₹0</span>
+                    </div>
+                    <p style="font-size:0.75rem; color:var(--text-muted); margin-top:1rem;">
+                        <i data-lucide="shield-check" style="color:var(--forest-mid);"></i> Transparent pricing. No hidden permit mark-ups. GST invoice provided.
+                    </p>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VOUCHER CONFIRMATION MODAL -->
+    <div class="app-modal-backdrop" id="voucherConfirmationModal" role="dialog" aria-modal="true">
+        <div class="app-modal-box">
+            <div class="app-modal-icon success"><i data-lucide="check-circle-2"></i></div>
+            <h3 class="app-modal-title">Permit Request Registered!</h3>
+            <p class="app-modal-sub">Keep your booking reference safe. Our safari desk will confirm your slot shortly.</p>
+            <ul class="voucher-detail-list">
+                <li><span class="vd-label">Booking Reference</span><span class="vd-val" id="voucherBookingId">—</span></li>
+                <li><span class="vd-label">National Park</span><span class="vd-val" id="voucherPark">—</span></li>
+                <li><span class="vd-label">Zone</span><span class="vd-val" id="voucherZone">—</span></li>
+                <li><span class="vd-label">Safari Date</span><span class="vd-val" id="voucherDate">—</span></li>
+                <li><span class="vd-label">Shift</span><span class="vd-val" id="voucherShift">—</span></li>
+                <li><span class="vd-label">Amount Payable</span><span class="vd-val" id="voucherAmount">—</span></li>
+            </ul>
+            <a href="paynow.html" class="btn-safari-gold" style="width:100%; justify-content:center; display:flex; margin-bottom:0.7rem;">
+                <i data-lucide="credit-card"></i> Proceed to Pay Now
+            </a>
+            <button type="button" class="btn-safari-primary" style="width:100%; justify-content:center; display:flex;" onclick="document.getElementById('voucherConfirmationModal').classList.remove('is-open')">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container-custom">
+            <div class="official-disclaimer-box">
+                <strong><i data-lucide="info"></i> Official Statutory Disclosure:</strong> Wild Path Safari is a private travel facilitation enterprise. We are <strong>NOT</strong> the official government website or Forest Department portal. Wildlife sightings are subject to natural conditions and cannot be guaranteed.
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col-about">
+                    <div class="footer-brand">WILD PATH <span>SAFARI</span></div>
+                    <p class="footer-bio">India's transparent wildlife safari booking and tour facilitation platform since 2012.</p>
+                    <ul class="footer-contact-items">
+                        <li><i data-lucide="map-pin"></i> Ramnagar Field Office: Ranikhet Road, Nainital, Uttarakhand - 244715</li>
+                        <li><i data-lucide="phone"></i> +91 99111 77045 / +91 96548 52568</li>
+                        <li><i data-lucide="mail"></i> safari@wildpathsafari.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-heading">Tiger Reserves</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="safari-booking.html?park=jim-corbett">Jim Corbett Safari</a></li>
+                        <li><a href="safari-booking.html?park=ranthambore">Ranthambore Safari</a></li>
+                        <li><a href="safari-booking.html?park=tadoba">Tadoba Andhari Safari</a></li>
+                        <li><a href="safari-booking.html?park=kaziranga">Kaziranga Rhino Safari</a></li>
+                        <li><a href="safari-booking.html?park=gir-lion">Gir Lion Safari</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-heading">Quick Navigation</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">All National Parks</a></li>
+                        <li><a href="packages.html">Wildlife Tour Packages</a></li>
+                        <li><a href="safari-booking.html">Live Price Calculator</a></li>
+                        <li><a href="paynow.html">Pay Online</a></li>
+                        <li><a href="contact.html">Contact Us &amp; FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-heading">Permit Rules &amp; Trust</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="contact.html#rules">Government ID Requirements</a></li>
+                        <li><a href="contact.html#cancellation">Permit Cancellation Policy</a></li>
+                        <li><a href="contact.html#privacy">Privacy &amp; Data Security</a></li>
+                        <li><a href="contact.html#terms">Terms of Facilitation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom-bar">
+                <div>© 2026 Wild Path Safari. All rights reserved.</div>
+                <div style="display:flex; gap:1.2rem;">
+                    <a href="contact.html#terms">Terms &amp; Conditions</a>
+                    <a href="contact.html#cancellation">Cancellation Policy</a>
+                    <a href="contact.html#privacy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SIDE ENQUIRY TAB + GENIE MODAL (shared) -->
+    <button class="side-enquiry-tab" id="sideEnquiryTab" type="button" aria-label="Open Safari Inquiry Form">
+        <i data-lucide="message-square"></i> Quick Enquiry
+    </button>
+    <div class="genie-modal-backdrop" id="genieModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="genie-modal-box">
+            <span class="washi-tape"></span>
+            <i data-lucide="send" class="paper-plane-fly" id="paperPlaneFly"></i>
+            <button class="modal-close-btn" id="modalCloseBtn" type="button" aria-label="Close modal">&times;</button>
+            <div class="modal-author-strip">
+                <div class="modal-author-avatar">Js</div>
+                <div class="modal-author-meta">
+                    <span class="modal-author-eyebrow">A Note from Our Team</span>
+                    <span class="modal-author-name">Your Safari Planner</span>
+                </div>
+            </div>
+            <h3 class="modal-title-main">Let's Plan Your <mark style="background:rgba(199,138,59,0.25); padding:0 0.2rem; border-radius:4px;">Next Jungle Safari</mark></h3>
+            <p class="modal-hand-note">Leave your number &amp; I'll call you back myself — no spam, real advice.</p>
+            <form id="genieEnquiryForm">
+                <div class="modal-form-group">
+                    <label class="modal-form-label">Which park are you dreaming of? <span class="req">*</span></label>
+                    <select class="modal-control" id="genieParkSelect" required>
+                        <option value="">Choose a national park...</option>
+                        <option value="jim-corbett">Jim Corbett National Park (Uttarakhand)</option>
+                        <option value="ranthambore">Ranthambore Tiger Reserve (Rajasthan)</option>
+                        <option value="tadoba">Tadoba Andhari Tiger Reserve (Maharashtra)</option>
+                        <option value="kaziranga">Kaziranga National Park (Assam)</option>
+                        <option value="gir-lion">Gir Lion Sanctuary (Gujarat)</option>
+                        <option value="bandhavgarh">Bandhavgarh Tiger Reserve (Madhya Pradesh)</option>
+                        <option value="kanha">Kanha Tiger Reserve (Madhya Pradesh)</option>
+                        <option value="pench">Pench Tiger Reserve (Mowgli Land)</option>
+                    </select>
+                </div>
+                <div class="modal-form-group">
+                    <label class="modal-form-label">What should I call you? <span class="req">*</span></label>
+                    <input type="text" class="modal-control" id="genieName" placeholder="Your Full Name" required>
+                </div>
+                <div class="modal-form-group">
+                    <label class="modal-form-label">Best mobile number to reach you <span class="req">*</span></label>
+                    <input type="tel" class="modal-control" id="geniePhone" placeholder="+91 98765 43210 / WhatsApp" required>
+                </div>
+                <div class="modal-form-row">
+                    <div class="modal-form-group">
+                        <label class="modal-form-label">Any tentative date?</label>
+                        <input type="date" class="modal-control" id="genieDate">
+                    </div>
+                    <div class="modal-form-group">
+                        <label class="modal-form-label">Number of travelers?</label>
+                        <select class="modal-control" id="genieGuests">
+                            <option value="1">1 Traveler</option>
+                            <option value="2" selected>2 Travelers</option>
+                            <option value="3">3 Travelers</option>
+                            <option value="4">4 Travelers</option>
+                            <option value="5">5 Travelers</option>
+                            <option value="6">6 Travelers (Full Gypsy)</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="modal-submit-btn"><span>Send Enquiry Now</span> <i data-lucide="send"></i></button>
+            </form>
+            <div class="modal-foot-trust">
+                <span><i data-lucide="shield-check"></i> 100% Secure</span>
+                <span><i data-lucide="zap"></i> Instant Callback</span>
+                <span><i data-lucide="check-circle-2"></i> No Bots / Spam</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHATSAPP FAB + MOBILE DOCK -->
+    <a href="#" class="whatsapp-fab" id="floatingWhatsAppBtn" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <nav class="mobile-bottom-dock">
+        <div class="dock-grid">
+            <a href="tel:+919911177045" class="dock-link"><i data-lucide="phone"></i><span>Call Us</span></a>
+            <a href="https://wa.me/919911177045" class="dock-link" target="_blank" rel="noopener"><i class="bi bi-whatsapp" style="color:#25d366;"></i><span>WhatsApp</span></a>
+            <a href="safari-booking.html" class="dock-link active"><i data-lucide="calendar-check"></i><span>Book Safari</span></a>
+            <a href="destinations.html" class="dock-link"><i data-lucide="compass"></i><span>Parks</span></a>
+        </div>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="data/parks.js"></script>
+    <script src="data/packages.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/lucide.min.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

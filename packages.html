@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife Tour Packages | All-Inclusive Safari Holidays | Wild Path Safari</title>
+    <meta name="description" content="Curated multi-day wildlife holiday packages across Corbett, Tadoba, Ranthambore, Kaziranga, Gir and Central India with safaris, luxury lodges, meals and transfers.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhance.css">
+</head>
+<body class="grain-overlay">
+
+    <aside class="top-bar">
+        <div class="container-custom">
+            <div class="top-bar-inner">
+                <ul class="top-contact-list">
+                    <li class="top-contact-item"><i data-lucide="phone" style="color:var(--safari-gold-light);"></i><span>Safari Desk: <a href="tel:+919911177045">+91 99111 77045</a> | <a href="tel:+919654852568">+91 96548 52568</a></span></li>
+                    <li class="top-contact-item"><i data-lucide="mail" style="color:var(--safari-gold-light);"></i><a href="mailto:safari@wildpathsafari.com">safari@wildpathsafari.com</a></li>
+                    <li class="top-contact-item"><i data-lucide="clock" style="color:var(--safari-gold-light);"></i><span>Office Hours: 06:00 AM – 10:30 PM (All 7 Days)</span></li>
+                </ul>
+                <!-- <div class="top-bar-action">
+                    <button type="button" class="top-enquiry-btn" onclick="openEnquiryModal()">
+                        <i data-lucide="message-square"></i> Quick Enquiry
+                    </button>
+                </div> -->
+            </div>
+        </div>
+    </aside>
+
+    <header class="main-navbar">
+        <div class="container-custom">
+            <div class="navbar-wrap">
+                <a href="index.html" class="brand-logo">
+                    <img src="images/logo.png" alt="Wild Path Safari" class="brand-logo-img">
+                    <div class="brand-text-wrap">
+                        <span class="brand-name">WILD PATH <span>SAFARI</span></span>
+                        <span class="brand-tagline">Wildlife Safaris &amp; Expeditions</span>
+                    </div>
+                </a>
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="destinations.html" class="nav-link">Destinations</a></li>
+                        <li class="nav-item active"><a href="packages.html" class="nav-link">Packages</a></li>
+                        <li class="nav-item"><a href="safari-booking.html" class="nav-link">Live Safari Booking</a></li>
+                        <li class="nav-item"><a href="paynow.html" class="nav-link" style="color:var(--safari-terracotta);"><i data-lucide="credit-card"></i> Pay Now</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions">
+                    <a href="safari-booking.html" class="btn-safari-primary"><i data-lucide="calendar-check"></i> Plan Safari</a>
+                    <button class="mobile-nav-toggle" aria-label="Toggle navigation"><i data-lucide="menu"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container-custom">
+            <div class="page-breadcrumb"><a href="index.html">Home</a> <i data-lucide="chevron-right"></i> <span>Tour Packages</span></div>
+            <span class="page-hero-eyebrow"><i data-lucide="award"></i> All-Inclusive Wildlife Holidays</span>
+            <h1 class="page-hero-title">Best-Selling <span>Safari Tour Packages</span></h1>
+            <p class="page-hero-subtitle">
+                Immersive multi-day itineraries complete with guaranteed core safari permits, luxury jungle resort stays, all gourmet meals and private transfers. Every package is handcrafted by our on-ground naturalist team.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container-custom">
+            <!-- Detailed package cards rendered here -->
+            <div id="packagesDetailContainer"></div>
+
+            <div style="text-align:center; margin-top:1rem;">
+                <span class="handwritten" style="font-size:1.4rem; color:var(--forest-mid); display:block; margin-bottom:1rem;">Can't find your perfect itinerary? We customise everything.</span>
+                <button type="button" class="btn-safari-gold" style="padding:0.9rem 2rem;" onclick="openEnquiryModal()">
+                    <i data-lucide="message-square"></i> Request a Custom Package
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container-custom">
+            <div class="official-disclaimer-box">
+                <strong><i data-lucide="info"></i> Official Statutory Disclosure:</strong> Wild Path Safari is a private travel facilitation enterprise. We are <strong>NOT</strong> the official government website or Forest Department portal. Wildlife sightings cannot be guaranteed.
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col-about">
+                    <div class="footer-brand">WILD PATH <span>SAFARI</span></div>
+                    <p class="footer-bio">India's transparent wildlife safari booking and tour facilitation platform since 2012.</p>
+                    <ul class="footer-contact-items">
+                        <li><i data-lucide="map-pin"></i> Ramnagar Field Office: Ranikhet Road, Nainital, Uttarakhand - 244715</li>
+                        <li><i data-lucide="phone"></i> +91 99111 77045 / +91 96548 52568</li>
+                        <li><i data-lucide="mail"></i> safari@wildpathsafari.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-heading">Tiger Reserves</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="safari-booking.html?park=jim-corbett">Jim Corbett Safari</a></li>
+                        <li><a href="safari-booking.html?park=ranthambore">Ranthambore Safari</a></li>
+                        <li><a href="safari-booking.html?park=tadoba">Tadoba Andhari Safari</a></li>
+                        <li><a href="safari-booking.html?park=kaziranga">Kaziranga Rhino Safari</a></li>
+                        <li><a href="safari-booking.html?park=gir-lion">Gir Lion Safari</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-heading">Quick Navigation</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">All National Parks</a></li>
+                        <li><a href="packages.html">Wildlife Tour Packages</a></li>
+                        <li><a href="safari-booking.html">Live Price Calculator</a></li>
+                        <li><a href="paynow.html">Pay Online</a></li>
+                        <li><a href="contact.html">Contact Us &amp; FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-heading">Permit Rules &amp; Trust</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="contact.html#rules">Government ID Requirements</a></li>
+                        <li><a href="contact.html#cancellation">Permit Cancellation Policy</a></li>
+                        <li><a href="contact.html#privacy">Privacy &amp; Data Security</a></li>
+                        <li><a href="contact.html#terms">Terms of Facilitation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom-bar">
+                <div>© 2026 Wild Path Safari. All rights reserved.</div>
+                <div style="display:flex; gap:1.2rem;">
+                    <a href="contact.html#terms">Terms &amp; Conditions</a>
+                    <a href="contact.html#cancellation">Cancellation Policy</a>
+                    <a href="contact.html#privacy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="side-enquiry-tab" id="sideEnquiryTab" type="button" aria-label="Open Safari Inquiry Form">
+        <i data-lucide="message-square"></i> Quick Enquiry
+    </button>
+    <div class="genie-modal-backdrop" id="genieModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="genie-modal-box">
+            <span class="washi-tape"></span>
+            <i data-lucide="send" class="paper-plane-fly" id="paperPlaneFly"></i>
+            <button class="modal-close-btn" id="modalCloseBtn" type="button" aria-label="Close modal">&times;</button>
+            <div class="modal-author-strip">
+                <div class="modal-author-avatar">Js</div>
+                <div class="modal-author-meta">
+                    <span class="modal-author-eyebrow">A Note from Our Team</span>
+                    <span class="modal-author-name">Your Safari Planner</span>
+                </div>
+            </div>
+            <h3 class="modal-title-main">Let's Plan Your <mark style="background:rgba(199,138,59,0.25); padding:0 0.2rem; border-radius:4px;">Next Jungle Safari</mark></h3>
+            <p class="modal-hand-note">Leave your number &amp; I'll call you back myself — no spam, real advice.</p>
+            <form id="genieEnquiryForm">
+                <div class="modal-form-group">
+                    <label class="modal-form-label">Which park are you dreaming of? <span class="req">*</span></label>
+                    <select class="modal-control" id="genieParkSelect" required>
+                        <option value="">Choose a national park...</option>
+                        <option value="jim-corbett">Jim Corbett National Park (Uttarakhand)</option>
+                        <option value="ranthambore">Ranthambore Tiger Reserve (Rajasthan)</option>
+                        <option value="tadoba">Tadoba Andhari Tiger Reserve (Maharashtra)</option>
+                        <option value="kaziranga">Kaziranga National Park (Assam)</option>
+                        <option value="gir-lion">Gir Lion Sanctuary (Gujarat)</option>
+                        <option value="bandhavgarh">Bandhavgarh Tiger Reserve (Madhya Pradesh)</option>
+                        <option value="kanha">Kanha Tiger Reserve (Madhya Pradesh)</option>
+                        <option value="pench">Pench Tiger Reserve (Mowgli Land)</option>
+                    </select>
+                </div>
+                <div class="modal-form-group">
+                    <label class="modal-form-label">What should I call you? <span class="req">*</span></label>
+                    <input type="text" class="modal-control" id="genieName" placeholder="Your Full Name" required>
+                </div>
+                <div class="modal-form-group">
+                    <label class="modal-form-label">Best mobile number to reach you <span class="req">*</span></label>
+                    <input type="tel" class="modal-control" id="geniePhone" placeholder="+91 98765 43210 / WhatsApp" required>
+                </div>
+                <div class="modal-form-row">
+                    <div class="modal-form-group">
+                        <label class="modal-form-label">Any tentative date?</label>
+                        <input type="date" class="modal-control" id="genieDate">
+                    </div>
+                    <div class="modal-form-group">
+                        <label class="modal-form-label">Number of travelers?</label>
+                        <select class="modal-control" id="genieGuests">
+                            <option value="1">1 Traveler</option>
+                            <option value="2" selected>2 Travelers</option>
+                            <option value="3">3 Travelers</option>
+                            <option value="4">4 Travelers</option>
+                            <option value="5">5 Travelers</option>
+                            <option value="6">6 Travelers (Full Gypsy)</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="modal-submit-btn"><span>Send Enquiry Now</span> <i data-lucide="send"></i></button>
+            </form>
+            <div class="modal-foot-trust">
+                <span><i data-lucide="shield-check"></i> 100% Secure</span>
+                <span><i data-lucide="zap"></i> Instant Callback</span>
+                <span><i data-lucide="check-circle-2"></i> No Bots / Spam</span>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="whatsapp-fab" id="floatingWhatsAppBtn" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <nav class="mobile-bottom-dock">
+        <div class="dock-grid">
+            <a href="tel:+919911177045" class="dock-link"><i data-lucide="phone"></i><span>Call Us</span></a>
+            <a href="https://wa.me/919911177045" class="dock-link" target="_blank" rel="noopener"><i class="bi bi-whatsapp" style="color:#25d366;"></i><span>WhatsApp</span></a>
+            <a href="safari-booking.html" class="dock-link"><i data-lucide="calendar-check"></i><span>Book Safari</span></a>
+            <a href="destinations.html" class="dock-link"><i data-lucide="compass"></i><span>Parks</span></a>
+        </div>
+    </nav>
+
+    <script src="data/parks.js"></script>
+    <script src="data/packages.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    // Render detailed tour package cards from PACKAGES_DATA
+    (function renderPackages() {
+        const container = document.getElementById('packagesDetailContainer');
+        if (!container || typeof PACKAGES_DATA === 'undefined') return;
+
+        // Friendly anchor aliases used by index.html links (#corbett, #tadoba, etc.)
+        const anchorAliasByPkgId = {
+            'pkg-corbett-wilderness': 'corbett',
+            'pkg-tadoba-apex-predator': 'tadoba',
+            'pkg-ranthambore-royal-trail': 'ranthambore',
+            'pkg-kaziranga-rhino-safari': 'kaziranga',
+            'pkg-gir-lion-pride': 'gir',
+            'pkg-mp-golden-triangle': 'central-india'
+        };
+
+        container.innerHTML = PACKAGES_DATA.map(pkg => {
+            const alias = anchorAliasByPkgId[pkg.id] || '';
+            const aliasAnchor = alias ? `<span id="${alias}" style="position:relative; top:-100px;"></span>` : '';
+            const itinerary = (pkg.itinerary || []).map(d => `
+                <div class="itinerary-day">
+                    <h5>Day ${d.day}: ${d.title}</h5>
+                    <p>${d.desc}</p>
+                </div>
+            `).join('');
+            const inclusions = (pkg.inclusions || []).map(i => `<li><i data-lucide="check-circle-2"></i> ${i}</li>`).join('');
+            const exclusions = (pkg.exclusions || []).map(e => `<li><i data-lucide="x-circle"></i> ${e}</li>`).join('');
+            const highlights = (pkg.highlights || []).map(h => `<li class="pkg-highlight-item"><i data-lucide="check-circle-2"></i> ${h}</li>`).join('');
+
+            return `
+            ${aliasAnchor}
+            <article class="pkg-detail-card" id="${pkg.id}">
+                <div class="pkg-detail-head">
+                    <img src="${pkg.featuredImage}" alt="${pkg.title}" loading="lazy">
+                    <div class="pkg-detail-info">
+                        <span class="pkg-badge" style="position:static; display:inline-block; margin-bottom:0.7rem;">${pkg.badge}</span>
+                        <span class="pkg-park-name">${pkg.parkName}</span>
+                        <h2 class="pkg-title" style="font-size:1.5rem;">${pkg.title}</h2>
+                        <div style="display:flex; gap:1rem; flex-wrap:wrap; margin:0.8rem 0;">
+                            <span class="park-feature-tag"><i data-lucide="clock"></i> ${pkg.duration}</span>
+                            <span class="park-feature-tag"><i data-lucide="star" style="color:#e69500;"></i> ${pkg.rating} (${pkg.reviewsCount})</span>
+                            <span class="park-feature-tag"><i data-lucide="tag"></i> ${pkg.category}</span>
+                        </div>
+                        <ul class="pkg-highlights-list">${highlights}</ul>
+                        <div class="pkg-footer" style="margin-top:1.2rem;">
+                            <div class="pkg-price-box">
+                                <span class="pkg-orig-price">₹${pkg.originalPrice.toLocaleString()}</span>
+                                <span class="pkg-final-price">₹${pkg.pricePerPerson.toLocaleString()}</span>
+                                <span class="pkg-per-person">per person (All Inclusive)</span>
+                            </div>
+                            <a href="safari-booking.html?park=${pkg.parkId}" class="btn-safari-gold">Book This Package</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pkg-detail-body">
+                    <h3 class="wizard-section-title" style="margin:1.6rem 0 1.2rem;"><i data-lucide="map"></i> Day-by-Day Itinerary</h3>
+                    ${itinerary}
+                    <div class="incl-excl-grid">
+                        <div>
+                            <h4 style="font-size:1.05rem; color:var(--forest-deep); margin-bottom:0.8rem;"><i data-lucide="check-check" style="color:#16a34a;"></i> What's Included</h4>
+                            <ul class="incl-list">${inclusions}</ul>
+                        </div>
+                        <div>
+                            <h4 style="font-size:1.05rem; color:var(--forest-deep); margin-bottom:0.8rem;"><i data-lucide="alert-octagon" style="color:#dc2626;"></i> Not Included</h4>
+                            <ul class="excl-list">${exclusions}</ul>
+                        </div>
+                    </div>
+                </div>
+            </article>`;
+        }).join('');
+
+        // Initialize lucide icons for dynamic package cards
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+        }
+
+        // Smooth-scroll to hash target (supports friendly aliases) after render
+        if (window.location.hash) {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+            }
+        }
+    })();
+    </script>
+    <script src="js/lucide.min.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
