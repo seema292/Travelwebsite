@@ -38,22 +38,26 @@ function initBookingEngine() {
     // 1. Populate National Parks select dropdown
     populateParksDropdown();
 
-    // 2. Read URL params (if user arrived from Hero bar or Park card)
+    // 2. Read URL params (if user arrived from Hero bar, Park page, or Enquiry modal)
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('park')) {
-        currentBookingState.parkId = urlParams.get('park');
+    const paramPark = urlParams.get('park') || urlParams.get('national_park_id');
+    if (paramPark) {
+        currentBookingState.parkId = paramPark;
     }
-    if (urlParams.get('mode')) {
-        currentBookingState.safariMode = urlParams.get('mode');
+    const paramMode = urlParams.get('mode') || urlParams.get('safari_mode');
+    if (paramMode) {
+        currentBookingState.safariMode = paramMode.toLowerCase();
     }
-    if (urlParams.get('shift')) {
-        currentBookingState.shift = urlParams.get('shift');
+    const paramShift = urlParams.get('shift') || urlParams.get('timeslot');
+    if (paramShift) {
+        currentBookingState.shift = paramShift.toLowerCase();
     }
     if (urlParams.get('guests')) {
         currentBookingState.guestsCount = parseInt(urlParams.get('guests')) || 2;
     }
-    if (urlParams.get('date')) {
-        currentBookingState.safariDate = urlParams.get('date');
+    const paramDate = urlParams.get('date') || urlParams.get('safari_date');
+    if (paramDate) {
+        currentBookingState.safariDate = paramDate;
     } else {
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate() + 1);

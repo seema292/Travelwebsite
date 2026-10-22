@@ -13,55 +13,200 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/enhance.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
-<body class="grain-overlay">
+<body class="with-fixed-header grain-overlay">
 
-    <aside class="top-bar">
-        <div class="container-custom">
-            <div class="top-bar-inner">
-                <ul class="top-contact-list">
-                    <li class="top-contact-item"><i data-lucide="phone" style="color:var(--safari-gold-light);"></i><span>Safari Desk: <a href="tel:+919911177045">+91 99111 77045</a> | <a href="tel:+919654852568">+91 96548 52568</a></span></li>
-                    <li class="top-contact-item"><i data-lucide="mail" style="color:var(--safari-gold-light);"></i><a href="mailto:safari@wildpathsafari.com">safari@wildpathsafari.com</a></li>
-                    <li class="top-contact-item"><i data-lucide="clock" style="color:var(--safari-gold-light);"></i><span>Office Hours: 06:00 AM – 10:30 PM (All 7 Days)</span></li>
-                </ul>
-                <!-- <div class="top-bar-action">
-                    <button type="button" class="top-enquiry-btn" onclick="openEnquiryModal()">
-                        <i data-lucide="message-square"></i> Quick Enquiry
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <div class="d-none d-lg-flex align-items-center">
+            <a href="mailto:safari@wildpathsafari.com" class="topbar-email">
+                <i class="bi bi-envelope-fill"></i>
+                <span>safari@wildpathsafari.com</span>
+            </a>
+        </div>
+        <div class="topbar-phones">
+            <a href="tel:+919911177045" class="topbar-contact">
+                <i class="bi bi-telephone-fill"></i>
+                <span>+91-99111 77045</span>
+            </a>
+            <div class="topbar-divider"></div>
+            <a href="tel:+919654852568" class="topbar-contact">
+                <i class="bi bi-telephone-fill"></i>
+                <span>+91-96548 52568</span>
+            </a>
+        </div>
+        <div class="topbar-social d-none d-lg-flex align-items-center">
+            <span class="topbar-social__label">Follow Us:</span>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://wa.me/919911177045" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="navbar-custom" aria-label="Main navigation">
+        <div class="navbar-inner">
+            <a href="index.html" class="navbar-logo" aria-label="Wild Path Safari — home">
+                <img src="images/logo.png" alt="Wild Path Safari" width="190" height="97" style="height:56px;width:auto;max-height:56px;object-fit:contain;">
+            </a>
+            
+            <div class="navbar-links">
+                <a href="index.html">Home</a>
+                <div class="navbar-dropdown">
+                    <button type="button" class="navbar-dropdown__toggle" aria-expanded="false" aria-haspopup="true" aria-controls="navParksMenu">
+                        National Parks
+                        <i class="bi bi-chevron-down" aria-hidden="true"></i>
                     </button>
-                </div> -->
-            </div>
-        </div>
-    </aside>
-
-    <header class="main-navbar">
-        <div class="container-custom">
-            <div class="navbar-wrap">
-                <a href="index.html" class="brand-logo">
-                    <img src="images/logo.png" alt="Wild Path Safari" class="brand-logo-img">
-                    <div class="brand-text-wrap">
-                        <span class="brand-name">WILD PATH <span>SAFARI</span></span>
-                        <span class="brand-tagline">Wildlife Safaris &amp; Expeditions</span>
+                    <div class="navbar-dropdown__menu" id="navParksMenu">
+                        <a href="jim-corbett-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://jeepsafaribookers.in/storage/national-parks/UK8ZezstoLl4jsd8SG9YNGinh0w6OmE3unFnR3CN.jpg" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Jim Corbett</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Uttarakhand</span>
+                            </span>
+                        </a>
+                        <a href="tadoba-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://jeepsafaribookers.in/storage/national-parks/hu0GI816MIgEhDoY4cvUKR1DGtzy7XYDOiLv3Zhe.jpg" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Tadoba</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Maharashtra</span>
+                            </span>
+                        </a>
+                        <a href="ranthambore-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://jeepsafaribookers.in/storage/national-parks/G439h3qcumSBmuMSJVGAczeDCQC64h0MvkgQKTlA.jpg" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Ranthambore</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Rajasthan</span>
+                            </span>
+                        </a>
+                        <a href="kaziranga-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://jeepsafaribookers.in/storage/national-parks/dMt8tqIvUnQZ0fJsAZrC9Hwn8hjvD3bTCLgphGFM.jpg" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Kaziranga</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Assam</span>
+                            </span>
+                        </a>
+                        <a href="gir-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?auto=format&fit=crop&w=100&q=80" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Gir Forest</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Gujarat</span>
+                            </span>
+                        </a>
+                        <a href="bandhavgarh-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=100&q=80" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Bandhavgarh</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Madhya Pradesh</span>
+                            </span>
+                        </a>
+                        <a href="kanha-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://jeepsafaribookers.in/storage/national-parks/9mxQRkQG05MlUuQ922FVjj4N3JLVSMHkngjKQZZe.jpg" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Kanha</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Madhya Pradesh</span>
+                            </span>
+                        </a>
+                        <a href="pench-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://jeepsafaribookers.in/storage/national-parks/PZpOkZIsyihC8zeO9tfZKEFOPSysauNFjnHpl3zE.jpg" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Pench</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Madhya Pradesh &amp; MH</span>
+                            </span>
+                        </a>
                     </div>
-                </a>
-                <nav>
-                    <ul class="nav-menu">
-                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="destinations.html" class="nav-link">Destinations</a></li>
-                        <li class="nav-item"><a href="packages.html" class="nav-link">Packages</a></li>
-                        <li class="nav-item"><a href="safari-booking.html" class="nav-link">Live Safari Booking</a></li>
-                        <li class="nav-item"><a href="paynow.html" class="nav-link" style="color:var(--safari-terracotta);"><i data-lucide="credit-card"></i> Pay Now</a></li>
-                        <li class="nav-item active"><a href="contact.html" class="nav-link">Contact</a></li>
-                    </ul>
-                </nav>
-                <div class="nav-actions">
-                    <a href="safari-booking.html" class="btn-safari-primary"><i data-lucide="calendar-check"></i> Plan Safari</a>
-                    <button class="mobile-nav-toggle" aria-label="Toggle navigation"><i data-lucide="menu"></i></button>
                 </div>
+                <a href="packages.html" class="">Packages</a>
+                <a href="safari-booking.html" class="">Live Safari Booking</a>
+                <a href="paynow.html" class="">Pay Online</a>
+                <a href="contact.html" class="active">Contact Us</a>
+            </div>
+
+            <div class="navbar-cta">
+                <a href="https://wa.me/919911177045?text=Hello%20Wild%20Path%20Safari%2C%20I%20would%20like%20to%20enquire%20about%20safari%20booking."
+                   target="_blank" rel="noopener" class="nav-btn nav-btn--wa">
+                    <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+                </a>
+                <a href="safari-booking.html" class="nav-btn nav-btn--plan">
+                    <i class="bi bi-calendar-check"></i> Plan My Safari
+                </a>
+            </div>
+
+            <button type="button"
+                    class="navbar-toggle"
+                    id="navToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu">
+                <i class="bi bi-list" aria-hidden="true"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <div class="mobile-dropdown">
+            <button type="button"
+                    class="mobile-dropdown__toggle"
+                    aria-expanded="false"
+                    aria-controls="mobileParksMenu"
+                    onclick="toggleMobileParksDropdown(this)">
+                <span>National Parks</span>
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="mobile-dropdown__menu" id="mobileParksMenu">
+                <a href="jim-corbett-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://jeepsafaribookers.in/storage/national-parks/UK8ZezstoLl4jsd8SG9YNGinh0w6OmE3unFnR3CN.jpg" alt="" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Jim Corbett</span>
+                </a>
+                <a href="tadoba-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://jeepsafaribookers.in/storage/national-parks/hu0GI816MIgEhDoY4cvUKR1DGtzy7XYDOiLv3Zhe.jpg" alt="" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Tadoba</span>
+                </a>
+                <a href="ranthambore-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://jeepsafaribookers.in/storage/national-parks/G439h3qcumSBmuMSJVGAczeDCQC64h0MvkgQKTlA.jpg" alt="" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Ranthambore</span>
+                </a>
+                <a href="kaziranga-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://jeepsafaribookers.in/storage/national-parks/dMt8tqIvUnQZ0fJsAZrC9Hwn8hjvD3bTCLgphGFM.jpg" alt="" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Kaziranga</span>
+                </a>
+                <a href="gir-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?auto=format&fit=crop&w=100&q=80" alt="" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Gir Forest</span>
+                </a>
+                <a href="bandhavgarh-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=100&q=80" alt="" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Bandhavgarh</span>
+                </a>
+                <a href="kanha-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://jeepsafaribookers.in/storage/national-parks/9mxQRkQG05MlUuQ922FVjj4N3JLVSMHkngjKQZZe.jpg" alt="" width="36" height="36" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Kanha</span>
+                </a>
+                <a href="pench-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://jeepsafaribookers.in/storage/national-parks/PZpOkZIsyihC8zeO9tfZKEFOPSysauNFjnHpl3zE.jpg" alt="" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Pench</span>
+                </a>
             </div>
         </div>
-    </header>
+        <a href="packages.html">Packages</a>
+        <a href="safari-booking.html">Live Safari Booking</a>
+        <a href="paynow.html">Pay Online</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="https://wa.me/919911177045" target="_blank" rel="noopener" class="btn" style="background:#25d366;color:#fff;margin-top:.75rem;justify-content:center;display:flex;align-items:center;gap:.5rem;border-radius:10px;padding:.75rem;">
+            <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+        </a>
+        <a href="safari-booking.html" class="btn" style="background:#2e4a1f;color:#fff;margin-top:.5rem;justify-content:center;display:flex;align-items:center;gap:.5rem;border-radius:10px;padding:.75rem;">
+            <i class="bi bi-calendar-check"></i> Plan My Safari
+        </a>
+    </div>
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" onclick="closeMobileMenu()"></div>
 
-    <section class="page-hero">
+<section class="page-hero">
         <div class="container-custom">
             <div class="page-breadcrumb"><a href="index.html">Home</a> <i data-lucide="chevron-right"></i> <span>Contact &amp; Help</span></div>
             <span class="page-hero-eyebrow"><i data-lucide="headphones"></i> We're Real People, Not Bots</span>
@@ -238,19 +383,37 @@
 
     <footer class="main-footer">
         <div class="container-custom">
-            <div class="official-disclaimer-box">
-                <strong style="display:inline-flex; align-items:center; gap:0.4rem;"><i data-lucide="info" style="width:17px; height:17px;"></i> Official Statutory Disclosure:</strong> Wild Path Safari is a private travel facilitation enterprise. We are <strong>NOT</strong> the official government website or Forest Department portal. Wildlife sightings cannot be guaranteed.
-            </div>
+
+            <!-- Official Government Disclosure Disclaimer Box (from JeepSafariBookers) -->
+            <!-- <div class="official-disclaimer-box">
+                <strong><i data-lucide="info"></i> Official Statutory Disclosure:</strong> Wild Path Safari is a
+                private travel facilitation and wildlife consultancy enterprise operated by certified destination
+                planners. We are <strong>NOT</strong> the official government website or the Forest Department portal of
+                any National Park or Tiger Reserve. We act as an independent on-ground facilitator to streamline your
+                permit acquisition, verified 4x4 Gypsy allocation, naturalist arrangement, and luxury resort stays.
+                Wildlife sightings are subject to natural conditions and cannot be guaranteed.
+            </div> -->
+
             <div class="footer-grid">
+                <!-- Col 1: About -->
                 <div class="footer-col-about">
-                    <div class="footer-brand">WILD PATH <span>SAFARI</span></div>
-                    <p class="footer-bio">India's transparent wildlife safari booking and tour facilitation platform since 2012.</p>
+                    <div class="footer-brand">
+                        WILD PATH <span>SAFARI</span>
+                    </div>
+                    <p class="footer-bio">
+                        India's transparent wildlife safari booking and tour facilitation platform. Handcrafting
+                        unforgettable encounters with Royal Bengal Tigers, Asiatic Lions, and One-Horned Rhinos since
+                        2012.
+                    </p>
                     <ul class="footer-contact-items">
-                        <li><i data-lucide="map-pin"></i> Ramnagar Field Office: Ranikhet Road, Nainital, Uttarakhand - 244715</li>
-                        <li><i data-lucide="phone"></i> +91 99111 77045 / +91 96548 52568</li>
-                        <li><i data-lucide="mail"></i> safari@wildpathsafari.com</li>
+                        <li><i data-lucide="map-pin"></i> Ramnagar Field Office: Ranikhet Road, Nainital, Uttarakhand -
+                            244715</li>
+                        <li><i data-lucide="phone"></i> Direct Hotline: +91 99111 77045 / +91 96548 52568</li>
+                        <li><i data-lucide="mail"></i> Booking Inquiries: safari@wildpathsafari.com</li>
                     </ul>
                 </div>
+
+                <!-- Col 2: Destinations -->
                 <div>
                     <h5 class="footer-heading">Tiger Reserves</h5>
                     <ul class="footer-links-list">
@@ -259,19 +422,28 @@
                         <li><a href="safari-booking.html?park=tadoba">Tadoba Andhari Safari</a></li>
                         <li><a href="safari-booking.html?park=kaziranga">Kaziranga Rhino Safari</a></li>
                         <li><a href="safari-booking.html?park=gir-lion">Gir Lion Safari</a></li>
+                        <li><a href="safari-booking.html?park=bandhavgarh">Bandhavgarh Safari</a></li>
+                        <li><a href="safari-booking.html?park=kanha">Kanha Reserve Safari</a></li>
+                        <li><a href="safari-booking.html?park=pench">Pench Mowgli Safari</a></li>
                     </ul>
                 </div>
+
+                <!-- Col 3: Quick Links -->
                 <div>
                     <h5 class="footer-heading">Quick Navigation</h5>
                     <ul class="footer-links-list">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="destinations.html">All National Parks</a></li>
+                        <li><a href="jim-corbett-national-park.html">All National Parks</a></li>
                         <li><a href="packages.html">Wildlife Tour Packages</a></li>
                         <li><a href="safari-booking.html">Live Price Calculator</a></li>
-                        <li><a href="paynow.html">Pay Online</a></li>
-                        <li><a href="contact.html">Contact Us &amp; FAQs</a></li>
+                        <li><a href="#best-time">Best Time to Visit</a></li>
+                        <li><a href="#faq">Frequently Asked Questions</a></li>
+                        <li><a href="#reviews">Traveler Reviews</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
+
+                <!-- Col 4: Trust & Policies -->
                 <div>
                     <h5 class="footer-heading">Permit Rules &amp; Trust</h5>
                     <ul class="footer-links-list">
@@ -280,17 +452,34 @@
                         <li><a href="contact.html#privacy">Privacy &amp; Data Security</a></li>
                         <li><a href="contact.html#terms">Terms of Facilitation</a></li>
                     </ul>
+                    <!-- <div
+                        style="margin-top:1.5rem; background:rgba(255,255,255,0.06); padding:1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.1);">
+                        <span
+                            style="font-size:0.75rem; color:var(--safari-gold-light); font-weight:700; text-transform:uppercase; display:block; margin-bottom:0.4rem;">
+                            <i data-lucide="lock"></i> 256-Bit SSL Encrypted
+                        </span>
+                        <p style="font-size:0.75rem; color:#b8b0a2; margin:0;">
+                            All bookings and payments are secured via bank-grade authentication gateways.
+                        </p>
+                    </div> -->
                 </div>
             </div>
+
             <div class="footer-bottom-bar">
-                <div>© 2026 Wild Path Safari. All rights reserved.</div>
+                <div>
+                    © 2026 Wild Path Safari. All rights reserved. Made with love for India's wildlife.
+                </div>
                 <div style="display:flex; gap:1.2rem;">
-                    <a href="contact.html#terms">Terms &amp; Conditions</a>
-                    <a href="contact.html#cancellation">Cancellation Policy</a>
-                    <a href="contact.html#privacy">Privacy Policy</a>
+                    <a href="contact.html">Terms &amp; Conditions</a>
+                    <a href="contact.html">Cancellation Policy</a>
+                    <a href="contact.html">Privacy Policy</a>
                 </div>
             </div>
         </div>
+            <!-- GIANT BRAND WORDMARK BAND -->
+            <div class="jsi-wordmark-band">
+                <div class="jsi-wordmark">Wild Path <span class="jsi-wordmark-accent">SAFARI</span></div>
+            </div>
     </footer>
 
     <button class="side-enquiry-tab" id="sideEnquiryTab" type="button" aria-label="Open Safari Inquiry Form">
@@ -406,5 +595,7 @@
     </script>
     <script src="js/lucide.min.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/nav-parks.js"></script>
+    <script src="js/header.js"></script>
 </body>
 </html>

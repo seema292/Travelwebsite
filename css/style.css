@@ -8,7 +8,7 @@
 
 :root {
     /* Forest & Earth Palette */
-    --forest-deep: #12281e;
+    --forest-deep: #1b9e4e;
     --forest-dark: #1b4332;
     --forest-mid: #2d6a4f;
     --forest-light: #40916c;
@@ -304,9 +304,11 @@ img {
     .brand-logo-img {
         height: 38px;
     }
+
     .brand-name {
         font-size: 1.15rem;
     }
+
     .brand-tagline {
         font-size: 0.6rem;
     }
@@ -462,7 +464,7 @@ img {
 }
 
 .btn-safari-gold {
-    background: linear-gradient(135deg, var(--safari-gold), #b87b28);
+    background: var(--forest-deep);
     color: #ffffff;
     font-family: var(--font-heading);
     font-weight: 700;

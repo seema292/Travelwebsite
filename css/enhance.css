@@ -1358,6 +1358,7 @@ svg.lucide.xl,
 }
 
 .finder-title-text {
+}
 
     /* Responsive Rules for Split Hero & Parks Slider */
     @media (max-width: 992px) {
@@ -1444,3 +1445,1698 @@ svg.lucide.xl,
             display: none !important;
         }
     }
+/* ==========================================================================
+   NATIONAL PARKS DATA-DRIVEN MEGAMENU (nav-parks.js)
+   Clean, responsive, accessible dropdown for all 8 parks
+   ========================================================================== */
+
+/* ── Desktop Dropdown Container ── */
+.nav-parks-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 640px;
+    max-width: 90vw;
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 48px rgba(18, 40, 30, 0.16);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.24s ease, transform 0.24s ease, visibility 0.24s ease;
+    z-index: 1000;
+}
+
+.nav-parks-item.nav-parks-open .nav-parks-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ── Megamenu Inner Grid ── */
+.nav-parks-megamenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 1.5rem;
+}
+
+/* ── Region Column ── */
+.nav-parks-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-parks-region-title {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    color: var(--safari-gold);
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.08em;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* ── Park Link Card (inside dropdown) ── */
+.nav-parks-link {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: background 0.2s ease, padding-left 0.2s ease;
+    margin-bottom: 0.2rem;
+}
+
+.nav-parks-link:hover,
+.nav-parks-link:focus {
+    background: var(--forest-pale);
+    padding-left: 1rem;
+    outline: none;
+}
+
+.nav-parks-link:focus-visible {
+    box-shadow: 0 0 0 2px var(--forest-mid);
+}
+
+.nav-parks-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--forest-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--forest-mid);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-parks-link:hover .nav-parks-icon {
+    background: var(--forest-mid);
+    color: #fff;
+}
+
+.nav-parks-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-parks-name {
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+.nav-parks-state {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.2;
+}
+
+.nav-parks-rating {
+    flex-shrink: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--safari-gold);
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+/* ── Footer CTA Row ── */
+.nav-parks-footer {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.nav-parks-cta {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    background: var(--forest-mid);
+    color: #fff;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-parks-cta:hover {
+    background: var(--forest-dark);
+    transform: translateY(-1px);
+}
+
+.nav-parks-cta--secondary {
+    background: var(--safari-gold-pale);
+    color: var(--safari-gold);
+    border: 1px solid var(--border-warm);
+}
+
+.nav-parks-cta--secondary:hover {
+    background: var(--safari-gold);
+    color: #fff;
+}
+
+/* ── Chevron rotation when open ── */
+.nav-parks-item.nav-parks-open > .nav-link i[data-lucide="chevron-down"] {
+    transform: rotate(180deg);
+}
+
+.nav-parks-item > .nav-link i[data-lucide="chevron-down"] {
+    transition: transform 0.2s ease;
+}
+
+/* ==========================================================================
+   MOBILE NAV MENU (slide-down panel + Parks submenu accordion)
+   ========================================================================== */
+
+@media (max-width: 991px) {
+    /* Show the mobile nav as a slide-down panel */
+    .nav-menu.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        max-height: calc(100vh - 0px);
+        overflow-y: auto;
+        background: #fff;
+        padding: 5rem 1.5rem 2rem;
+        box-shadow: 0 20px 60px rgba(18, 40, 30, 0.2);
+        z-index: 999;
+        gap: 0;
+    }
+
+    .nav-menu.mobile-open .nav-item {
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-menu.mobile-open .nav-link {
+        padding: 1rem 0;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .nav-menu.mobile-open .nav-item.active .nav-link {
+        color: var(--safari-gold);
+    }
+
+    /* Hide the old hardcoded dropdowns on mobile */
+    .nav-menu.mobile-open .nav-dropdown {
+        display: none !important;
+    }
+
+    /* ── Mobile Parks Submenu ── */
+    .nav-parks-mobile-submenu {
+        padding: 0 0 0.5rem 0;
+    }
+
+    .nav-parks-mobile-submenu[hidden] {
+        display: none;
+    }
+
+    .nav-parks-mobile-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-parks-mobile-region {
+        font-family: var(--font-heading);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        color: var(--safari-gold);
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        padding: 0.75rem 0 0.4rem;
+        margin-top: 0.4rem;
+    }
+
+    .nav-parks-mobile-region:first-child {
+        margin-top: 0;
+    }
+
+    .nav-parks-mobile-link {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.6rem 0.5rem;
+        text-decoration: none;
+        color: var(--text-dark);
+        font-size: 0.9rem;
+        font-weight: 500;
+        border-radius: var(--radius-sm);
+        transition: background 0.2s ease;
+    }
+
+    .nav-parks-mobile-link:hover {
+        background: var(--forest-pale);
+    }
+
+    .nav-parks-mobile-link i {
+        color: var(--forest-mid);
+        flex-shrink: 0;
+    }
+
+    .nav-parks-mobile-link small {
+        margin-left: auto;
+        color: var(--text-muted);
+        font-size: 0.78rem;
+    }
+
+    .nav-parks-mobile-actions {
+        display: flex;
+        gap: 0.6rem;
+        padding-top: 0.75rem;
+        margin-top: 0.5rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .nav-parks-mobile-cta {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        padding: 0.65rem;
+        border-radius: var(--radius-sm);
+        font-family: var(--font-heading);
+        font-size: 0.82rem;
+        font-weight: 600;
+        text-decoration: none;
+        background: var(--forest-mid);
+        color: #fff;
+    }
+
+    .nav-parks-mobile-cta--secondary {
+        background: var(--safari-gold-pale);
+        color: var(--safari-gold);
+        border: 1px solid var(--border-warm);
+    }
+}
+
+/* ── Hide mobile submenu on desktop ── */
+@media (min-width: 992px) {
+    .nav-parks-mobile-submenu {
+        display: none !important;
+    }
+}
+
+/* ── Ensure the desktop parks dropdown doesn't show on mobile ── */
+@media (max-width: 991px) {
+    .nav-parks-dropdown {
+        display: none !important;
+    }
+}
+
+/* ── Global Noticebar Hide Override ── */
+:root {
+    --noticebar-h: 0px !important;
+    --header-total-h: calc(var(--topbar-h) + var(--navbar-h)) !important;
+}
+.noticebar {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+}
+
+
+/* ==========================================================================
+   WILD PATH SAFARI — REFERENCE-GRADE SAFARI ZONE SECTION
+   Flagship UI for Core & Buffer Safari Zones across all National Parks
+   ========================================================================== */
+
+/* ── Section Container (Clean Luxury Light Gradient matching index.html) ── */
+.tc-page .tc-zones-premium,
+.tc-zones-premium {
+    position: relative !important;
+    padding: 5rem 0 5.5rem !important;
+    background:
+        radial-gradient(ellipse at 20% 10%, rgba(199, 138, 59, 0.04) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 90%, rgba(27, 158, 78, 0.03) 0%, transparent 55%),
+        linear-gradient(180deg, #fffdfa 0%, #faf6ec 100%) !important;
+    border-top: 1px solid rgba(199, 138, 59, 0.2) !important;
+    border-bottom: 1px solid rgba(199, 138, 59, 0.2) !important;
+    overflow: hidden !important;
+}
+
+.tc-page .tc-zones-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #c78a3b, #f0cb72, #c78a3b, transparent);
+    z-index: 2;
+}
+
+.tc-page .tc-zones-premium .tc-wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+/* ── Section Header ── */
+.tc-page .tc-zones-premium .tc-section-head {
+    max-width: 780px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.tc-page .tc-zones-premium .tc-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.38rem 1rem;
+    border-radius: 999px;
+    background: rgba(199, 138, 59, 0.12);
+    border: 1px solid rgba(199, 138, 59, 0.28);
+    color: #8c5b14;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+}
+
+.tc-page .tc-zones-premium .tc-eyebrow i {
+    font-size: 0.85rem;
+    color: #c78a3b;
+}
+
+.tc-page .tc-zones-premium .tc-h2 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: clamp(1.85rem, 3.2vw, 2.35rem) !important;
+    font-weight: 600 !important;
+    color: #12281e !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0.75rem !important;
+    letter-spacing: -0.01em !important;
+}
+
+.tc-page .tc-zones-premium .tc-h2 em {
+    font-style: normal !important;
+    color: #c78a3b !important;
+    background: none !important;
+    -webkit-text-fill-color: #c78a3b !important;
+}
+
+.tc-page .tc-zones-premium .tc-lead {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.98rem !important;
+    line-height: 1.68 !important;
+    color: #5c5549 !important;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ── Zone Cards Responsive Grid ── */
+.tc-page .tc-zones-premium .tc-zones-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.75rem !important;
+    overflow: visible !important;
+    border: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    align-items: stretch !important;
+}
+
+@media (max-width: 1100px) {
+    .tc-page .tc-zones-premium .tc-zones-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.45rem !important;
+    }
+}
+
+@media (max-width: 720px) {
+    .tc-page .tc-zones-premium .tc-zones-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.35rem !important;
+    }
+}
+
+/* ── Individual Zone Card Shell (Premium Elevated Design) ── */
+.tc-zone-card,
+.tc-page .tc-zones-premium .tc-zone {
+    min-width: 0 !important;
+    height: 100% !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(46, 42, 37, 0.08) !important;
+    border-radius: 20px !important;
+    box-shadow:
+        0 2px 4px rgba(18, 40, 30, 0.03),
+        0 8px 24px rgba(18, 40, 30, 0.06),
+        0 1px 2px rgba(18, 40, 30, 0.02) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    position: relative !important;
+    transition:
+        transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.35s ease !important;
+}
+
+/* Top accent luxury gold ribbon with glow */
+.tc-zone-card::before,
+.tc-page .tc-zones-premium .tc-zone::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 4px !important;
+    z-index: 5 !important;
+    opacity: 1 !important;
+    background: linear-gradient(90deg, #c78a3b 0%, #f0cb72 35%, #fff5d8 50%, #f0cb72 65%, #c78a3b 100%) !important;
+    border-radius: 20px 20px 0 0 !important;
+    box-shadow: 0 0 12px rgba(199, 138, 59, 0.4) !important;
+}
+
+/* Suppress obsolete background pseudo-element from old theme */
+.tc-zone-card::after,
+.tc-page .tc-zones-premium .tc-zone::after {
+    display: none !important;
+    content: none !important;
+}
+
+.tc-zone-card:hover,
+.tc-page .tc-zones-premium .tc-zone:hover {
+    transform: translateY(-8px) !important;
+    border-color: rgba(199, 138, 59, 0.4) !important;
+    box-shadow:
+        0 4px 8px rgba(18, 40, 30, 0.04),
+        0 20px 48px rgba(18, 40, 30, 0.12),
+        0 8px 20px rgba(199, 138, 59, 0.08) !important;
+}
+
+/* ── Card Media Banner (Image + Overlay + Badges + Title) ── */
+.tc-zone-card__media {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background: #111a14;
+    flex-shrink: 0;
+}
+
+.tc-zone-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+    display: block;
+}
+
+.tc-zone-card:hover .tc-zone-card__media img,
+.tc-page .tc-zones-premium .tc-zone:hover .tc-zone-card__media img {
+    transform: scale(1.1);
+    filter: brightness(1.08) saturate(1.12);
+}
+
+/* Shimmer sweep on media hover */
+.tc-zone-card__media::after,
+.tc-page .tc-zones-premium .tc-zone .tc-zone-card__media::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        105deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.15) 50%,
+        transparent 60%
+    );
+    pointer-events: none;
+    z-index: 4;
+    transition: left 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tc-zone-card:hover .tc-zone-card__media::after,
+.tc-page .tc-zones-premium .tc-zone:hover .tc-zone-card__media::after {
+    left: 130%;
+}
+
+.tc-zone-card__media-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(14, 24, 18, 0.55) 0%, rgba(14, 24, 18, 0.05) 35%, rgba(14, 24, 18, 0.92) 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.tc-zone-card__media-top {
+    position: absolute;
+    top: 0.95rem;
+    left: 0.95rem;
+    right: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    z-index: 3;
+}
+
+.tc-zone-card__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.36rem 0.8rem;
+    border-radius: 999px;
+    backdrop-filter: blur(16px) saturate(1.5);
+    -webkit-backdrop-filter: blur(16px) saturate(1.5);
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.tc-zone-card:hover .tc-zone-card__badge {
+    transform: translateY(-1px);
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.tc-zone-card__badge--core {
+    background: rgba(13, 43, 32, 0.55);
+    color: #ffffff !important;
+    border: 1px solid rgba(52, 199, 89, 0.4);
+}
+
+.tc-zone-card__badge--core i {
+    color: #34c759;
+    text-shadow: 0 0 6px rgba(52, 199, 89, 0.5);
+}
+
+.tc-zone-card__badge--buffer {
+    background: rgba(184, 115, 34, 0.55);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 216, 117, 0.45);
+}
+
+.tc-zone-card__badge--buffer i {
+    color: #ffd875;
+    text-shadow: 0 0 6px rgba(255, 216, 117, 0.5);
+}
+
+.tc-zone-card__sighting {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    background: rgba(14, 24, 18, 0.5);
+    padding: 0.34rem 0.75rem;
+    border-radius: 999px;
+    backdrop-filter: blur(16px) saturate(1.5);
+    -webkit-backdrop-filter: blur(16px) saturate(1.5);
+    border: 1px solid rgba(240, 203, 114, 0.45);
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.22),
+        inset 0 1px 0 rgba(240, 203, 114, 0.15) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.tc-zone-card:hover .tc-zone-card__sighting {
+    transform: translateY(-1px);
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(240, 203, 114, 0.25) !important;
+}
+
+.tc-zone-card__sighting i {
+    color: #f7c948;
+    font-size: 0.8rem;
+    text-shadow: 0 0 6px rgba(247, 201, 72, 0.5);
+}
+
+.tc-zone-card__media-bottom {
+    position: absolute;
+    bottom: 0.95rem;
+    left: 1.15rem;
+    right: 1.15rem;
+    z-index: 3;
+}
+
+.tc-zone-card__kicker {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    color: #f0cb72 !important;
+    margin-bottom: 0.3rem !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+}
+
+.tc-zone-card__kicker::before {
+    content: '' !important;
+    display: inline-block !important;
+    width: 18px !important;
+    height: 1.5px !important;
+    background: #f0cb72 !important;
+    border-radius: 1px !important;
+    opacity: 0.7 !important;
+}
+
+/* Zone Name: ALWAYS bright white on top of the dark image banner */
+.tc-page .tc-zone-card__name,
+.tc-page h3.tc-zone-card__name,
+.tc-zone-card__media h3,
+.tc-zone-card h3.tc-zone-card__name,
+.tc-zone-card__name {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1.38rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+    letter-spacing: -0.01em !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 0 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ── Card Body & Details ── */
+.tc-zone-card__body {
+    padding: 1.4rem 1.4rem 1.35rem;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+}
+
+.tc-zone-card__desc {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.88rem !important;
+    line-height: 1.68 !important;
+    color: #5c5549 !important;
+    margin-bottom: 1rem !important;
+    min-height: 4.8rem !important;
+}
+
+@media (max-width: 720px) {
+    .tc-zone-card__desc {
+        min-height: auto !important;
+    }
+}
+
+/* ── Meta Info Grid: Clean 2-Row Layout with Icons ── */
+.tc-zone-card__meta {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.7rem !important;
+    padding: 0.9rem 1rem !important;
+    background: linear-gradient(135deg, #fbf9f4 0%, #f7f2e8 100%) !important;
+    border: 1px solid rgba(199, 138, 59, 0.12) !important;
+    border-radius: 14px !important;
+    margin-bottom: 1.15rem !important;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.tc-zone-card:hover .tc-zone-card__meta {
+    border-color: rgba(199, 138, 59, 0.2) !important;
+    box-shadow: 0 2px 10px rgba(199, 138, 59, 0.06) !important;
+}
+
+.tc-zone-card__meta-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.7rem !important;
+}
+
+.tc-zone-card__meta-icon {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 9px !important;
+    background: linear-gradient(135deg, rgba(27, 158, 78, 0.12) 0%, rgba(27, 158, 78, 0.06) 100%) !important;
+    color: #1b9e4e !important;
+    font-size: 0.85rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    margin-top: 1px !important;
+    border: 1px solid rgba(27, 158, 78, 0.15) !important;
+    transition: transform 0.2s ease, background 0.2s ease !important;
+}
+
+.tc-zone-card:hover .tc-zone-card__meta-icon {
+    transform: scale(1.08) !important;
+    background: linear-gradient(135deg, rgba(27, 158, 78, 0.18) 0%, rgba(27, 158, 78, 0.1) 100%) !important;
+}
+
+.tc-zone-card__meta-text {
+    display: flex !important;
+    flex-direction: column !important;
+    line-height: 1.3 !important;
+}
+
+.tc-zone-card__meta-label {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: #8c8273 !important;
+}
+
+.tc-zone-card__meta-val {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    color: #1c1917 !important;
+    margin-top: 2px !important;
+}
+
+/* ── Feature Pills ── */
+.tc-zone-card__pills {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+    margin-bottom: 1.25rem !important;
+}
+
+.tc-zone-card__pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    color: #1b4332 !important;
+    background: linear-gradient(135deg, rgba(27, 158, 78, 0.05) 0%, rgba(27, 158, 78, 0.02) 100%) !important;
+    border: 1px solid rgba(27, 158, 78, 0.15) !important;
+    padding: 0.26rem 0.68rem !important;
+    border-radius: 999px !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.tc-zone-card__pill:hover {
+    background: linear-gradient(135deg, rgba(27, 158, 78, 0.14) 0%, rgba(27, 158, 78, 0.08) 100%) !important;
+    border-color: rgba(27, 158, 78, 0.35) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 3px 8px rgba(27, 158, 78, 0.12) !important;
+}
+
+.tc-zone-card__pill i {
+    font-size: 0.76rem !important;
+    color: #1b9e4e !important;
+    font-weight: 700 !important;
+}
+
+/* ── Card Footer & Dual Action ── */
+.tc-zone-card__footer {
+    margin-top: auto !important;
+    padding-top: 1rem !important;
+    border-top: 1px solid rgba(46, 42, 37, 0.07) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.75rem !important;
+    position: relative !important;
+}
+
+.tc-zone-card__footer::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -1px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 50px !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, rgba(199, 138, 59, 0.3), transparent) !important;
+    border-radius: 1px !important;
+}
+
+.tc-zone-card__status {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.76rem !important;
+    font-weight: 600 !important;
+    color: #1b4332 !important;
+    padding: 0.3rem 0.65rem !important;
+    border-radius: 999px !important;
+    background: rgba(27, 158, 78, 0.06) !important;
+    border: 1px solid rgba(27, 158, 78, 0.12) !important;
+}
+
+.tc-pulse-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background: #1b9e4e !important;
+    box-shadow: 0 0 0 0 rgba(27, 158, 78, 0.6), 0 0 6px rgba(27, 158, 78, 0.4) !important;
+    animation: tcPulseGreen 2s infinite !important;
+}
+
+@keyframes tcPulseGreen {
+    0% {
+        box-shadow: 0 0 0 0 rgba(27, 158, 78, 0.6), 0 0 6px rgba(27, 158, 78, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(27, 158, 78, 0), 0 0 6px rgba(27, 158, 78, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(27, 158, 78, 0), 0 0 6px rgba(27, 158, 78, 0.4);
+    }
+}
+
+.tc-zone-card__actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+.tc-zone-card__wa-btn {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #25d366 0%, #1ebd5a 100%) !important;
+    color: #ffffff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.05rem !important;
+    text-decoration: none !important;
+    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    flex-shrink: 0 !important;
+    border: none !important;
+}
+
+.tc-zone-card__wa-btn:hover {
+    background: linear-gradient(135deg, #1ebd5a 0%, #16a34a 100%) !important;
+    transform: scale(1.12) !important;
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+}
+
+.tc-zone-card__btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.45rem !important;
+    padding: 0.65rem 1.4rem !important;
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, #1b9e4e 0%, #15803d 100%) !important;
+    border: 1px solid #15803d !important;
+    color: #ffffff !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 0.84rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(27, 158, 78, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    white-space: nowrap !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.tc-zone-card__btn::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 50% !important;
+    height: 100% !important;
+    background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%) !important;
+    transition: left 0.5s ease !important;
+}
+
+.tc-zone-card__btn:hover::before {
+    left: 130% !important;
+}
+
+.tc-zone-card__btn:hover {
+    background: linear-gradient(135deg, #15803d 0%, #166534 100%) !important;
+    border-color: #166534 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(27, 158, 78, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.tc-zone-card__btn i {
+    font-size: 0.78rem !important;
+    transition: transform 0.25s ease !important;
+}
+
+.tc-zone-card__btn:hover i {
+    transform: translateX(4px) !important;
+}
+
+/* ==========================================================================
+   ZONE CARD — CLEAN LIGHT REDESIGN (overrides to match reference target)
+   Inset rounded image in white frame · solid green badge (top-left) ·
+   white rating chip (top-right) · green title + location line + outlined
+   pills inside the white body. Placed after base rules so it wins.
+   ========================================================================== */
+
+/* Card shell: soft white card, subtle border, gentle shadow, no gold ribbon */
+.tc-page .tc-zones-premium .tc-zone-card,
+.tc-zone-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(23, 71, 53, 0.08) !important;
+    border-radius: 22px !important;
+    padding: 0.55rem 0.55rem 0 !important;           /* white frame around image */
+    box-shadow: 0 1px 2px rgba(18, 40, 30, 0.04),
+                0 10px 30px rgba(18, 40, 30, 0.07) !important;
+    overflow: hidden !important;
+}
+/* Remove the old gold top ribbon */
+.tc-page .tc-zones-premium .tc-zone-card::before,
+.tc-zone-card::before {
+    display: none !important;
+    content: none !important;
+}
+.tc-page .tc-zones-premium .tc-zone-card:hover,
+.tc-zone-card:hover {
+    transform: translateY(-6px) !important;
+    border-color: rgba(23, 71, 53, 0.14) !important;
+    box-shadow: 0 4px 10px rgba(18, 40, 30, 0.06),
+                0 22px 48px rgba(18, 40, 30, 0.12) !important;
+}
+
+/* Media: inset rounded image, fixed height, NO dark overlay */
+.tc-zone-card__media {
+    height: 210px !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    background: #e9efe6 !important;
+}
+.tc-zone-card__media-overlay {
+    display: none !important;
+}
+/* Kill the shimmer sweep pseudo-element (belonged to dark design) */
+.tc-zone-card__media::after,
+.tc-page .tc-zones-premium .tc-zone .tc-zone-card__media::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Top row: badge left, rating chip right */
+.tc-zone-card__media-top {
+    top: 0.85rem !important;
+    left: 0.85rem !important;
+    right: 0.85rem !important;
+}
+
+/* Badge: SOLID GREEN pill, white text (core + buffer variants) */
+.tc-zone-card__badge,
+.tc-zone-card__badge--core,
+.tc-zone-card__badge--buffer {
+    background: #1f9d55 !important;
+    color: #ffffff !important;
+    border: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 4px 12px rgba(31, 157, 85, 0.35) !important;
+    letter-spacing: 0.06em !important;
+    padding: 0.4rem 0.85rem !important;
+}
+.tc-zone-card__badge--buffer {
+    background: #c7892f !important;
+    box-shadow: 0 4px 12px rgba(199, 137, 47, 0.35) !important;
+}
+.tc-zone-card__badge i,
+.tc-zone-card__badge--core i,
+.tc-zone-card__badge--buffer i {
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* Rating / sighting chip: WHITE chip, green star + green text */
+.tc-zone-card__sighting {
+    background: #ffffff !important;
+    color: #1b7a43 !important;
+    border: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 3px 10px rgba(18, 40, 30, 0.18) !important;
+    font-weight: 800 !important;
+    padding: 0.36rem 0.72rem !important;
+}
+.tc-zone-card__sighting i {
+    color: #1f9d55 !important;
+    text-shadow: none !important;
+}
+
+/* Body: comfortable padding */
+.tc-zone-card__body {
+    padding: 1.15rem 1rem 1.3rem !important;
+}
+
+/* Head block (kicker + title) now lives in the body */
+.tc-zone-card__head {
+    margin-bottom: 0.55rem !important;
+}
+
+/* Kicker becomes the amber location line (pin look via existing dash removed) */
+.tc-zone-card__kicker {
+    color: #c7892f !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.08em !important;
+    text-shadow: none !important;
+    margin-bottom: 0.25rem !important;
+}
+.tc-zone-card__kicker::before {
+    /* swap the dash for a location pin glyph */
+    content: '\F3E7' !important;          /* bootstrap-icons geo-alt-fill */
+    font-family: 'bootstrap-icons' !important;
+    width: auto !important;
+    height: auto !important;
+    background: none !important;
+    font-size: 0.8rem !important;
+    opacity: 1 !important;
+    color: #c7892f !important;
+}
+
+/* Title: bold GREEN on white */
+.tc-page .tc-zone-card__name,
+.tc-page h3.tc-zone-card__name,
+.tc-zone-card h3.tc-zone-card__name,
+.tc-zone-card__name {
+    color: #1b7a43 !important;
+    font-size: 1.3rem !important;
+    text-shadow: none !important;
+}
+
+/* Description: muted grey, no forced tall min-height */
+.tc-zone-card__desc {
+    color: #5b6560 !important;
+    min-height: auto !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Pills: light outlined rounded chips with icon */
+.tc-zone-card__pills {
+    margin-bottom: 1rem !important;
+}
+.tc-zone-card__pill {
+    background: #ffffff !important;
+    border: 1px solid rgba(23, 71, 53, 0.16) !important;
+    color: #3c4a41 !important;
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.74rem !important;
+}
+.tc-zone-card__pill i {
+    color: #1f9d55 !important;
+}
+.tc-zone-card__pill:hover {
+    background: #f3f8f2 !important;
+    border-color: rgba(31, 157, 85, 0.4) !important;
+    box-shadow: 0 3px 8px rgba(31, 157, 85, 0.1) !important;
+}
+
+/* Soften the meta box to match the light theme */
+.tc-zone-card__meta {
+    background: #f6faf4 !important;
+    border: 1px solid rgba(23, 71, 53, 0.08) !important;
+}
+
+/* ── Section Bottom Guarantee Strip ── */
+.tc-zones-guarantee-strip {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 1.25rem 2.25rem !important;
+    margin-top: 3.5rem !important;
+    padding: 1.35rem 2rem !important;
+    background: linear-gradient(135deg, #ffffff 0%, #fdfaf2 100%) !important;
+    border: 1px solid rgba(199, 138, 59, 0.25) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 6px 22px rgba(18, 40, 30, 0.05), 0 1px 3px rgba(199, 138, 59, 0.08) !important;
+    position: relative !important;
+}
+
+.tc-zones-guarantee-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: #12281e !important;
+}
+
+.tc-zones-guarantee-item i {
+    color: #c78a3b !important;
+    font-size: 1.15rem !important;
+}
+
+.tc-zones-guarantee-dot {
+    color: rgba(199, 138, 59, 0.4) !important;
+    font-weight: bold !important;
+}
+
+@media (max-width: 767px) {
+    .tc-zones-guarantee-strip {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.85rem !important;
+        padding: 1rem 1.25rem !important;
+    }
+    .tc-zones-guarantee-dot {
+        display: none !important;
+    }
+}
+
+
+/* ==========================================================================
+   GLOBAL BRAND PALETTE, HEADING TYPOGRAPHY & FOOTER SYSTEM (MATCHING INDEX.HTML)
+   Applied uniformly across all pages of the website
+   ========================================================================== */
+
+/* ── 1. Master CSS Variables (Exact Colors from index.html / style.css) ── */
+:root {
+    /* Exact Forest & Earth Palette from index.html */
+    --forest-deep: #12281e !important;
+    --forest-dark: #1b4332 !important;
+    --forest-mid: #2d6a4f !important;
+    --forest-light: #40916c !important;
+    --forest-pale: #e8f3ed !important;
+
+    /* Exact Safari Gold & Ochre from index.html */
+    --safari-gold: #c78a3b !important;
+    --safari-gold-light: #e0aa58 !important;
+    --safari-gold-pale: #fdf5e7 !important;
+    --safari-amber: #e69500 !important;
+    --safari-terracotta: #8f3422 !important;
+
+    /* Exact Natural Parchment & Paper from index.html */
+    --paper-bg: #fffdfa !important;
+    --parchment: #faf6ec !important;
+    --parchment-mid: #f3edd9 !important;
+    --parchment-dark: #e8dfc7 !important;
+
+    /* Exact Typography & Neutrals from index.html */
+    --text-primary: #212529 !important;
+    --text-dark: #1c1917 !important;
+    --text-muted: #5c5549 !important;
+    --text-light: #8c8273 !important;
+    --border-color: rgba(46, 42, 37, 0.12) !important;
+    --border-warm: rgba(199, 138, 59, 0.35) !important;
+
+    /* Primary Brand Green (Footer, Topbar accents, Main CTAs) */
+    --brand-green: #1b9e4e !important;
+
+    /* Exact Fonts from index.html */
+    --font-heading: 'Poppins', sans-serif !important;
+    --font-editorial: 'Playfair Display', serif !important;
+    --font-body: 'Inter', sans-serif !important;
+    --font-hand: 'Caveat', cursive !important;
+
+    /* Remap all National Park theme variables to index.html exact colors */
+    --tc-ink: #12281e !important;
+    --tc-forest: #12281e !important;
+    --tc-moss: #1b9e4e !important;
+    --tc-fern: #2d6a4f !important;
+    --tc-gold: #c78a3b !important;
+    --tc-gold-lt: #e0aa58 !important;
+    --tc-parchment: #faf6ec !important;
+    --tc-cream: #fffdfa !important;
+    --tc-muted: #5c5549 !important;
+    --tc-serif: 'Poppins', sans-serif !important;
+    --font-display: 'Poppins', sans-serif !important;
+
+    --gold: #c78a3b !important;
+    --gold-light: #e0aa58 !important;
+    --gold-dark: #8a5a1a !important;
+    --primary: #1b9e4e !important;
+    --primary-light: #2d6a4f !important;
+    --primary-soft: #40916c !important;
+    --secondary: #c78a3b !important;
+    --cta: #1b9e4e !important;
+    --cta-hover: #15803d !important;
+    --earth: #12281e !important;
+    --earth-mid: #1b4332 !important;
+    --background: #fffdfa !important;
+    --background-alt: #faf6ec !important;
+    --offwhite: #fffdfa !important;
+    --card: #ffffff !important;
+    --foreground: #1c1917 !important;
+
+    --footer-bg: #1b9e4e !important;
+    --footer-text: #ffffff !important;
+    --footer-heading: #ffffff !important;
+    --footer-link: #ffffff !important;
+    --footer-link-hover: #e0aa58 !important;
+}
+
+/* ── 2. Master Heading Typography & Colors (Exact match with index.html) ── */
+h1, h2, h3, h4, h5, h6,
+.tc-page h1, .tc-page h2, .tc-page h3, .tc-page h4, .tc-page h5, .tc-page h6,
+.tc-hero__h1,
+.tc-conv-title,
+.tc-h2,
+.tc-cta__h2,
+.rb-section__h2,
+.tc-new-card h3,
+.tc-package-card h3,
+.tc-new-step h3,
+.tc-about-visual__content h3,
+.tc-faq-intro .tc-h2,
+.tc-conv-benefit h3,
+.tc-zone-title,
+.section-title,
+.park-title,
+.pkg-title,
+.step-title,
+.mode-title,
+.season-card-title,
+.wizard-section-title,
+.page-hero-title,
+.modal-title,
+.modal-title-main,
+.app-modal-title,
+.calc-summary-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+    color: #12281e !important;
+    font-style: normal !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.25 !important;
+}
+
+/* Section titles: matching index.html .section-title (32px / clamp, weight 600, color #12281e) */
+.section-title,
+.tc-h2,
+.tc-conv-title,
+.rb-section__h2 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: clamp(1.85rem, 3.2vw, 2.25rem) !important;
+    font-weight: 600 !important;
+    color: #12281e !important;
+    margin-bottom: 0.75rem !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.25 !important;
+}
+
+/* Headings on dark backgrounds (Dark CTA, Seasons banner, FAQ intro, zone card media) */
+.tc-seasons-premium .tc-h2,
+.tc-faq-intro .tc-h2,
+.tc-cta .tc-cta__h2,
+.tc-cta__h2,
+.hero-split-title,
+.page-hero-title,
+.footer-heading,
+.dark-section h1, .dark-section h2, .dark-section h3,
+[class*="bg-dark"] h1, [class*="bg-dark"] h2, [class*="bg-dark"] h3 {
+    color: #ffffff !important;
+    font-style: normal !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* Highlighted / Gold words in headings (No serif italics! Clean gold emphasis) */
+h1 em, h2 em, h3 em, h4 em, h5 em, h6 em,
+.tc-hero__h1 em,
+.tc-conv-title em,
+.tc-conv-title span,
+.tc-h2 em,
+.tc-cta__h2 em,
+.section-title em,
+.section-title span.gradient-gold,
+.tc-page .tc-hero__h1 em,
+.tc-page .tc-h2 em,
+.tc-page .tc-cta__h2 em,
+.tc-page .tc-faq-intro .tc-h2 em,
+.tc-page .tc-seasons-premium .tc-h2 em,
+.tc-zone-card__name em {
+    font-style: normal !important;
+    font-family: 'Poppins', sans-serif !important;
+    color: #c78a3b !important;
+    background: none !important;
+    -webkit-text-fill-color: #c78a3b !important;
+}
+
+/* On dark CTA, gold words use warm bright gold for high contrast */
+.tc-cta__h2 em,
+.tc-seasons-premium .tc-h2 em,
+.tc-faq-intro .tc-h2 em {
+    color: #f0cb72 !important;
+    -webkit-text-fill-color: #f0cb72 !important;
+}
+
+/* Section Eyebrows matching index.html */
+.section-eyebrow,
+.tc-conv-eyebrow,
+.tc-eyebrow,
+.rb-section__eyebrow,
+.tc-zone-card__kicker {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #c78a3b !important;
+}
+
+/* Section Subtitles matching index.html */
+.section-subtitle,
+.tc-conv-sub,
+.tc-sub,
+.book-safari-lead,
+.wizard-section-sub {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.98rem !important;
+    color: #5c5549 !important;
+    line-height: 1.65 !important;
+}
+
+/* ==========================================================================
+   GIANT BRAND WORDMARK BAND (footer bottom) — matches reference target
+   Big "Jungle Safari india" wordmark on dark green with a copyright strip.
+   ========================================================================== */
+.jsi-wordmark-band {
+    background: #0d3320 !important;
+    width: 100% !important;
+    padding: 0.4rem 0 0.2rem !important;
+    overflow: hidden !important;
+    text-align: center !important;
+    line-height: 0 !important;
+}
+
+.jsi-wordmark {
+    font-family: 'Poppins', 'Inter', sans-serif !important;
+    font-weight: 800 !important;
+    color: #3f7a5a !important;
+    letter-spacing: -0.01em !important;
+    line-height: 0.95 !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    /* Fluid giant size that scales with viewport width */
+    font-size: clamp(2.6rem, 11.1vw, 15rem) !important;
+    text-transform: none !important;
+    user-select: none !important;
+}
+
+.jsi-wordmark-accent {
+    color: #c78a3b !important;
+    text-transform: uppercase !important;
+}
+
+/* The band is a direct child of <footer> (outside .container-custom),
+   so width:100% already spans the full footer. */
+footer.main-footer .jsi-wordmark-band,
+.tc-page footer.main-footer .jsi-wordmark-band {
+    margin-top: 3rem !important;
+}
+
+/* ── 3. Exact Master Footer System (Matching index.html) ── */
+footer.main-footer,
+.tc-page footer.main-footer,
+.site-footer {
+    background: #1b9e4e !important;
+    color: #ffffff !important;
+    padding: 5rem 0 0 !important;
+    border-top: none !important;
+    position: relative !important;
+    overflow: hidden !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+footer.main-footer::before,
+.tc-page footer.main-footer::before {
+    display: none !important;
+}
+
+footer.main-footer .container-custom {
+    max-width: 1240px !important;
+    margin: 0 auto !important;
+    padding: 0 1.5rem !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+footer.main-footer .footer-grid {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr !important;
+    gap: 3rem !important;
+    margin-bottom: 3.5rem !important;
+}
+
+@media (max-width: 1100px) {
+    footer.main-footer .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+@media (max-width: 768px) {
+    footer.main-footer .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+}
+
+footer.main-footer .footer-col-about {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.1rem !important;
+}
+
+footer.main-footer .footer-brand {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1.6rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    letter-spacing: -0.01em !important;
+}
+
+footer.main-footer .footer-brand span {
+    color: #e0aa58 !important;
+}
+
+footer.main-footer .footer-bio {
+    font-size: 0.88rem !important;
+    color: #ffffff !important;
+    line-height: 1.65 !important;
+}
+
+footer.main-footer .footer-contact-items {
+    list-style: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+    font-size: 0.88rem !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+}
+
+footer.main-footer .footer-contact-items li {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    color: #ffffff !important;
+}
+
+footer.main-footer .footer-contact-items i,
+footer.main-footer .footer-contact-items svg {
+    color: #e0aa58 !important;
+    stroke: #e0aa58 !important;
+    font-size: 0.95rem !important;
+    flex-shrink: 0;
+}
+
+footer.main-footer .footer-heading {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin-bottom: 1.2rem !important;
+    position: relative !important;
+    padding-bottom: 0.5rem !important;
+    letter-spacing: normal !important;
+}
+
+footer.main-footer .footer-heading::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 32px !important;
+    height: 2px !important;
+    background: #e0aa58 !important;
+}
+
+footer.main-footer .footer-links-list {
+    list-style: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.55rem !important;
+    font-size: 0.88rem !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+}
+
+footer.main-footer .footer-links-list a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+}
+
+footer.main-footer .footer-links-list a:hover {
+    color: #e0aa58 !important;
+    padding-left: 0.35rem !important;
+}
+
+footer.main-footer .footer-bottom-bar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+    padding-top: 1.8rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+    font-size: 0.82rem !important;
+    color: #ffffff !important;
+}
+
+footer.main-footer .footer-bottom-bar a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+footer.main-footer .footer-bottom-bar a:hover {
+    color: #e0aa58 !important;
+}
+
+/* ── 4. Unified Button & CTA Colors (Matching index.html) ── */
+.btn-primary,
+.tc-page .tc-btn--primary,
+.tc-cta-btn,
+.tc-conv-book {
+    background-color: #1b9e4e !important;
+    border-color: #1b9e4e !important;
+    color: #ffffff !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+.btn-primary:hover,
+.tc-page .tc-btn--primary:hover,
+.tc-cta-btn:hover,
+.tc-conv-book:hover {
+    background-color: #15803d !important;
+    border-color: #15803d !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 18px rgba(27, 158, 78, 0.35) !important;
+}
+
+body {
+    background-color: #fffdfa !important;
+    color: #1c1917 !important;
+}
+
+/* ==========================================================================
+   NATIONAL PARK HERO SECTION BACKGROUND (national-park-bg.png)
+   Applied across all national park hero sections
+   ========================================================================== */
+.tc-page .tc-hero,
+.tc-hero {
+    background-color: #f7f9f2 !important;
+    background-image: url('../images/national-park-bg.png') !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    border-bottom: 1px solid rgba(23, 71, 53, 0.1) !important;
+}
+
+/* Ensure hero text and elements have crisp contrast on national-park-bg.png */
+.tc-page .tc-hero__h1,
+.tc-hero .tc-hero__h1 {
+    color: #12281e !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+}
+
+.tc-page .tc-hero__h1 em,
+.tc-hero .tc-hero__h1 em {
+    color: #c78a3b !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-style: normal !important;
+    background: none !important;
+    -webkit-text-fill-color: #c78a3b !important;
+    display: block !important;
+}
+
+.tc-page .tc-hero__sub,
+.tc-hero .tc-hero__sub {
+    color: #4a544c !important;
+    font-family: 'Inter', sans-serif !important;
+    line-height: 1.65 !important;
+}
+
+.tc-page .tc-hero__crumb,
+.tc-hero .tc-hero__crumb,
+.tc-page .tc-hero__crumb a,
+.tc-hero .tc-hero__crumb a {
+    color: #596a60 !important;
+}
+
+.tc-page .tc-hero__crumb a:hover,
+.tc-hero .tc-hero__crumb a:hover {
+    color: #12281e !important;
+}
+
+.tc-page .tc-hero__kicker,
+.tc-hero .tc-hero__kicker {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(199, 138, 59, 0.3) !important;
+    color: #8a5a1a !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.06em !important;
+    backdrop-filter: blur(6px) !important;
+}
