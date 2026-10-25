@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels &amp; Resorts | Wildlife Lodges Near National Parks | Wild Path Safari</title>
+    <meta name="description" content="Browse and book hotels and resorts near India's top national parks — Corbett, Tadoba, Kanha, Bandhavgarh, Ranthambore and more. Filter by price, rating and property type.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhance.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hotels.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css">
+</head>
+<body class="with-fixed-header grain-overlay">
+
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <div class="d-none d-lg-flex align-items-center">
+            <a href="mailto:safari@wildpathsafari.com" class="topbar-email">
+                <i class="bi bi-envelope-fill"></i>
+                <span>safari@wildpathsafari.com</span>
+            </a>
+        </div>
+        <div class="topbar-phones">
+            <a href="tel:+919911177045" class="topbar-contact">
+                <i class="bi bi-telephone-fill"></i>
+                <span>+91-99111 77045</span>
+            </a>
+            <div class="topbar-divider"></div>
+            <a href="tel:+919654852568" class="topbar-contact">
+                <i class="bi bi-telephone-fill"></i>
+                <span>+91-96548 52568</span>
+            </a>
+        </div>
+        <div class="topbar-social d-none d-lg-flex align-items-center">
+            <span class="topbar-social__label">Follow Us:</span>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://wa.me/919911177045" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="navbar-custom" aria-label="Main navigation">
+        <div class="navbar-inner">
+            <a href="index.html" class="navbar-logo" aria-label="Wild Path Safari — home">
+                <img src="images/logo.png" alt="Wild Path Safari" width="190" height="97" style="height:56px;width:auto;max-height:56px;object-fit:contain;">
+            </a>
+            
+            <div class="navbar-links">
+                <a href="index.html">Home</a>
+                <div class="navbar-dropdown">
+                    <button type="button" class="navbar-dropdown__toggle" aria-expanded="false" aria-haspopup="true" aria-controls="navParksMenu">
+                        National Parks
+                        <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="navbar-dropdown__menu" id="navParksMenu">
+                        <a href="jim-corbett-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://jeepsafaribookers.in/storage/national-parks/UK8ZezstoLl4jsd8SG9YNGinh0w6OmE3unFnR3CN.jpg" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Jim Corbett</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Uttarakhand</span>
+                            </span>
+                        </a>
+                        <a href="tadoba-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://jeepsafaribookers.in/storage/national-parks/hu0GI816MIgEhDoY4cvUKR1DGtzy7XYDOiLv3Zhe.jpg" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Tadoba</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Maharashtra</span>
+                            </span>
+                        </a>
+                        <a href="ranthambore-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://jeepsafaribookers.in/storage/national-parks/G439h3qcumSBmuMSJVGAczeDCQC64h0MvkgQKTlA.jpg" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Ranthambore</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Rajasthan</span>
+                            </span>
+                        </a>
+                        <a href="kaziranga-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://jeepsafaribookers.in/storage/national-parks/dMt8tqIvUnQZ0fJsAZrC9Hwn8hjvD3bTCLgphGFM.jpg" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Kaziranga</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Assam</span>
+                            </span>
+                        </a>
+                        <a href="gir-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?auto=format&fit=crop&w=100&q=80" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Gir Forest</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Gujarat</span>
+                            </span>
+                        </a>
+                        <a href="bandhavgarh-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=100&q=80" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Bandhavgarh</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Madhya Pradesh</span>
+                            </span>
+                        </a>
+                        <a href="kanha-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://jeepsafaribookers.in/storage/national-parks/9mxQRkQG05MlUuQ922FVjj4N3JLVSMHkngjKQZZe.jpg" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Kanha</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Madhya Pradesh</span>
+                            </span>
+                        </a>
+                        <a href="pench-national-park.html">
+                            <img class="navbar-dropdown__thumb" src="https://jeepsafaribookers.in/storage/national-parks/PZpOkZIsyihC8zeO9tfZKEFOPSysauNFjnHpl3zE.jpg" alt="" width="36" height="36">
+                            <span style="display:flex;flex-direction:column;line-height:1.15;">
+                                <span style="font-weight:700;">Pench</span>
+                                <span style="font-size:.66rem;font-weight:500;color:#8aa197;">Madhya Pradesh &amp; MH</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <a href="packages.html" class="">Packages</a>
+                <a href="hotels.html" class="active" aria-current="page">Hotels</a>
+                <a href="safari-booking.html" class="">Live Safari Booking</a>
+                <a href="paynow.html" class="">Pay Online</a>
+                <a href="contact.html" class="">Contact Us</a>
+            </div>
+
+            <div class="navbar-cta">
+                <a href="https://wa.me/919911177045?text=Hello%20Wild%20Path%20Safari%2C%20I%20would%20like%20to%20enquire%20about%20safari%20booking."
+                   target="_blank" rel="noopener" class="nav-btn nav-btn--wa">
+                    <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+                </a>
+                <a href="safari-booking.html" class="nav-btn nav-btn--plan">
+                    <i class="bi bi-calendar-check"></i> Plan My Safari
+                </a>
+            </div>
+
+            <button type="button"
+                    class="navbar-toggle"
+                    id="navToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu">
+                <i class="bi bi-list" aria-hidden="true"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <div class="mobile-dropdown">
+            <button type="button"
+                    class="mobile-dropdown__toggle"
+                    aria-expanded="false"
+                    aria-controls="mobileParksMenu"
+                    onclick="toggleMobileParksDropdown(this)">
+                <span>National Parks</span>
+                <i class="bi bi-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="mobile-dropdown__menu" id="mobileParksMenu">
+                <a href="jim-corbett-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://jeepsafaribookers.in/storage/national-parks/UK8ZezstoLl4jsd8SG9YNGinh0w6OmE3unFnR3CN.jpg" alt="" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Jim Corbett</span>
+                </a>
+                <a href="tadoba-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://jeepsafaribookers.in/storage/national-parks/hu0GI816MIgEhDoY4cvUKR1DGtzy7XYDOiLv3Zhe.jpg" alt="" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Tadoba</span>
+                </a>
+                <a href="ranthambore-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://jeepsafaribookers.in/storage/national-parks/G439h3qcumSBmuMSJVGAczeDCQC64h0MvkgQKTlA.jpg" alt="" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Ranthambore</span>
+                </a>
+                <a href="kaziranga-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://jeepsafaribookers.in/storage/national-parks/dMt8tqIvUnQZ0fJsAZrC9Hwn8hjvD3bTCLgphGFM.jpg" alt="" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Kaziranga</span>
+                </a>
+                <a href="gir-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?auto=format&fit=crop&w=100&q=80" alt="" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Gir Forest</span>
+                </a>
+                <a href="bandhavgarh-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=100&q=80" alt="" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Bandhavgarh</span>
+                </a>
+                <a href="kanha-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://jeepsafaribookers.in/storage/national-parks/9mxQRkQG05MlUuQ922FVjj4N3JLVSMHkngjKQZZe.jpg" alt="" width="36" height="36" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Kanha</span>
+                </a>
+                <a href="pench-national-park.html" style="display:flex;align-items:center;gap:.6rem;">
+                    <img src="https://jeepsafaribookers.in/storage/national-parks/PZpOkZIsyihC8zeO9tfZKEFOPSysauNFjnHpl3zE.jpg" alt="" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+                    <span>Pench</span>
+                </a>
+            </div>
+        </div>
+        <a href="packages.html">Packages</a>
+        <a href="hotels.html" class="active">Hotels</a>
+        <a href="safari-booking.html">Live Safari Booking</a>
+        <a href="paynow.html">Pay Online</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="https://wa.me/919911177045" target="_blank" rel="noopener" class="btn" style="background:#25d366;color:#fff;margin-top:.75rem;justify-content:center;display:flex;align-items:center;gap:.5rem;border-radius:10px;padding:.75rem;">
+            <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+        </a>
+        <a href="safari-booking.html" class="btn" style="background:#2e4a1f;color:#fff;margin-top:.5rem;justify-content:center;display:flex;align-items:center;gap:.5rem;border-radius:10px;padding:.75rem;">
+            <i class="bi bi-calendar-check"></i> Plan My Safari
+        </a>
+    </div>
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" onclick="closeMobileMenu()"></div>
+
+    <!-- ===================== HOTELS SEARCH BAR ===================== -->
+    <section class="hotels-searchbar" id="main-content">
+        <div class="hotels-searchbar__inner">
+            <div class="hotels-field">
+                <label for="hotelSelect">Select Hotel</label>
+                <div class="hotels-select-wrap">
+                    <select id="hotelSelect">
+                        <option value="">Choose Hotel</option>
+                    </select>
+                </div>
+            </div>
+            <div class="hotels-field">
+                <label for="hotelDates">CHECK-IN / CHECK-OUT</label>
+                <input type="text" id="hotelDates" placeholder="2026-10-23 / 2026-10-24" readonly>
+            </div>
+            <div class="hotels-field">
+                <label for="hotelGuests">Guest &amp; Rooms</label>
+                <input type="text" id="hotelGuests" value="1 Room and 2 Guests" readonly>
+            </div>
+            <div class="hotels-field hotels-field--btns">
+                <button type="button" class="hotels-btn hotels-btn--search" id="hotelSearchBtn">Search</button>
+                <button type="button" class="hotels-btn hotels-btn--reset" id="hotelResetBtn">Reset</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== HOTELS LISTING ===================== -->
+    <main class="hotels-wrap">
+        <div class="hotels-layout">
+
+            <!-- FILTER SIDEBAR -->
+            <aside class="hotels-filters" aria-label="Hotel filters">
+                <div class="hotels-filter-head">
+                    <span class="hotels-filter-title">Filter</span>
+                    <button type="button" class="hotels-filter-toggle" id="filterToggle" aria-label="Toggle filters">
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                </div>
+
+                <div class="hotels-filter-body" id="filterBody">
+                    <div class="hotels-filter-group">
+                        <h4 class="hotels-filter-group__title">Filter By Price Range</h4>
+                        <div class="hotels-price-slider">
+                            <div class="hotels-price-track" id="priceTrack">
+                                <div class="hotels-price-fill" id="priceFill"></div>
+                                <input type="range" id="priceMinRange" min="1000" max="50000" value="1000" step="500">
+                                <input type="range" id="priceMaxRange" min="1000" max="50000" value="50000" step="500">
+                            </div>
+                        </div>
+                        <div class="hotels-price-inputs">
+                            <div class="hotels-price-input">
+                                <span>Min</span>
+                                <input type="number" id="priceMin" value="1000" min="0">
+                            </div>
+                            <span class="hotels-price-dash">-</span>
+                            <div class="hotels-price-input">
+                                <span>Max</span>
+                                <input type="number" id="priceMax" value="50000" min="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hotels-filter-group">
+                        <h4 class="hotels-filter-group__title">Filter By Rating</h4>
+                        <div class="hotels-rating-filters" id="ratingFilters">
+                            <label class="hotels-check"><input type="checkbox" value="5"><span class="hotels-stars" data-stars="5"></span> 5 star</label>
+                            <label class="hotels-check"><input type="checkbox" value="4"><span class="hotels-stars" data-stars="4"></span> 4 star</label>
+                            <label class="hotels-check"><input type="checkbox" value="3"><span class="hotels-stars" data-stars="3"></span> 3 star</label>
+                            <label class="hotels-check"><input type="checkbox" value="2"><span class="hotels-stars" data-stars="2"></span> 2 star</label>
+                            <label class="hotels-check"><input type="checkbox" value="1"><span class="hotels-stars" data-stars="1"></span> 1 star</label>
+                        </div>
+                    </div>
+
+                    <div class="hotels-filter-group">
+                        <h4 class="hotels-filter-group__title">Property Type</h4>
+                        <div class="hotels-type-filters" id="typeFilters">
+                            <label class="hotels-check"><input type="checkbox" value="Hotel"><span>Hotel</span></label>
+                            <label class="hotels-check"><input type="checkbox" value="Villa"><span>Villa</span></label>
+                            <label class="hotels-check"><input type="checkbox" value="Resort"><span>Resort</span></label>
+                            <label class="hotels-check"><input type="checkbox" value="Apartment"><span>Apartment</span></label>
+                            <label class="hotels-check"><input type="checkbox" value="Guest House"><span>Guest House</span></label>
+                            <label class="hotels-check"><input type="checkbox" value="Hostel"><span>Hostel</span></label>
+                            <label class="hotels-check"><input type="checkbox" value="Hotel &amp; Resort"><span>Hotel &amp; Resort</span></label>
+                        </div>
+                    </div>
+
+                    <div class="hotels-filter-actions">
+                        <button type="button" class="hotels-btn hotels-btn--apply" id="applyFilterBtn">Apply filter</button>
+                        <button type="button" class="hotels-btn hotels-btn--clear" id="clearFilterBtn">Clear Filter</button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- HOTEL CARDS -->
+            <section class="hotels-results" aria-label="Hotel results">
+                <h2 class="hotels-results__title" id="hotelsHeading">Hotels &amp; Resorts In India</h2>
+                <div class="hotels-list" id="hotelsList"><!-- cards injected by JS --></div>
+                <div class="hotels-empty" id="hotelsEmpty" hidden>
+                    <i class="bi bi-search"></i>
+                    <p>No hotels match your filters. Try adjusting the price range, rating, or property type.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ===================== HOTEL ENQUIRY MODAL ===================== -->
+    <div class="hotel-enquiry-backdrop" id="enquiryBackdrop" aria-hidden="true">
+        <div class="hotel-enquiry" role="dialog" aria-modal="true" aria-labelledby="enquiryTitle">
+            <button type="button" class="hotel-enquiry__close" id="enquiryClose" aria-label="Close enquiry form">&times;</button>
+            <div class="hotel-enquiry__head">
+                <h3 class="hotel-enquiry__title" id="enquiryTitle">Enquire About Your Stay</h3>
+                <p class="hotel-enquiry__sub" id="enquiryHotelName">Fill in your details and our team will get back to you shortly.</p>
+            </div>
+            <form class="hotel-enquiry__form" id="enquiryForm" novalidate>
+                <div class="hotel-enquiry__row">
+                    <div class="hotel-enquiry__group">
+                        <label for="enqName">Full Name <span>*</span></label>
+                        <input type="text" id="enqName" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="hotel-enquiry__group">
+                        <label for="enqPhone">Phone <span>*</span></label>
+                        <input type="tel" id="enqPhone" name="phone" required placeholder="+91 ..." pattern="[0-9+\-\s]{7,15}">
+                    </div>
+                </div>
+                <div class="hotel-enquiry__row">
+                    <div class="hotel-enquiry__group">
+                        <label for="enqEmail">Email</label>
+                        <input type="email" id="enqEmail" name="email" placeholder="you@example.com">
+                    </div>
+                    <div class="hotel-enquiry__group">
+                        <label for="enqGuests">Guests &amp; Rooms</label>
+                        <input type="text" id="enqGuests" name="guests" value="1 Room and 2 Guests">
+                    </div>
+                </div>
+                <div class="hotel-enquiry__row">
+                    <div class="hotel-enquiry__group">
+                        <label for="enqHotel">Hotel</label>
+                        <input type="text" id="enqHotel" name="hotel" readonly>
+                    </div>
+                    <div class="hotel-enquiry__group">
+                        <label for="enqDates">Check-in / Check-out</label>
+                        <input type="text" id="enqDates" name="dates" placeholder="Select dates" readonly>
+                    </div>
+                </div>
+                <div class="hotel-enquiry__group">
+                    <label for="enqMessage">Message</label>
+                    <textarea id="enqMessage" name="message" rows="3" placeholder="Any special requests or questions?"></textarea>
+                </div>
+                <div class="hotel-enquiry__error" id="enquiryError" hidden></div>
+                <div class="hotel-enquiry__actions">
+                    <button type="button" class="hotels-btn hotels-btn--clear" id="enquiryCancel">Cancel</button>
+                    <button type="submit" class="hotels-btn hotels-btn--search">Send Enquiry</button>
+                </div>
+                <p class="hotel-enquiry__note"><i class="bi bi-whatsapp"></i> Your enquiry will be sent to our team via WhatsApp.</p>
+            </form>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container-custom">
+
+            <!-- Official Government Disclosure Disclaimer Box (from JeepSafariBookers) -->
+            <!-- <div class="official-disclaimer-box">
+                <strong><i data-lucide="info"></i> Official Statutory Disclosure:</strong> Wild Path Safari is a
+                private travel facilitation and wildlife consultancy enterprise operated by certified destination
+                planners. We are <strong>NOT</strong> the official government website or the Forest Department portal of
+                any National Park or Tiger Reserve. We act as an independent on-ground facilitator to streamline your
+                permit acquisition, verified 4x4 Gypsy allocation, naturalist arrangement, and luxury resort stays.
+                Wildlife sightings are subject to natural conditions and cannot be guaranteed.
+            </div> -->
+
+            <div class="footer-grid">
+                <!-- Col 1: About -->
+                <div class="footer-col-about">
+                    <div class="footer-brand">
+                        WILD PATH <span>SAFARI</span>
+                    </div>
+                    <p class="footer-bio">
+                        India's transparent wildlife safari booking and tour facilitation platform. Handcrafting
+                        unforgettable encounters with Royal Bengal Tigers, Asiatic Lions, and One-Horned Rhinos since
+                        2012.
+                    </p>
+                    <ul class="footer-contact-items">
+                        <li><i data-lucide="map-pin"></i> Ramnagar Field Office: Ranikhet Road, Nainital, Uttarakhand -
+                            244715</li>
+                        <li><i data-lucide="phone"></i> Direct Hotline: +91 99111 77045 / +91 96548 52568</li>
+                        <li><i data-lucide="mail"></i> Booking Inquiries: safari@wildpathsafari.com</li>
+                    </ul>
+                </div>
+
+                <!-- Col 2: Destinations -->
+                <div>
+                    <h5 class="footer-heading">Tiger Reserves</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="safari-booking.html?park=jim-corbett">Jim Corbett Safari</a></li>
+                        <li><a href="safari-booking.html?park=ranthambore">Ranthambore Safari</a></li>
+                        <li><a href="safari-booking.html?park=tadoba">Tadoba Andhari Safari</a></li>
+                        <li><a href="safari-booking.html?park=kaziranga">Kaziranga Rhino Safari</a></li>
+                        <li><a href="safari-booking.html?park=gir-lion">Gir Lion Safari</a></li>
+                        <li><a href="safari-booking.html?park=bandhavgarh">Bandhavgarh Safari</a></li>
+                        <li><a href="safari-booking.html?park=kanha">Kanha Reserve Safari</a></li>
+                        <li><a href="safari-booking.html?park=pench">Pench Mowgli Safari</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Quick Links -->
+                <div>
+                    <h5 class="footer-heading">Quick Navigation</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="jim-corbett-national-park.html">All National Parks</a></li>
+                        <li><a href="packages.html">Wildlife Tour Packages</a></li>
+                        <li><a href="safari-booking.html">Live Price Calculator</a></li>
+                        <li><a href="#best-time">Best Time to Visit</a></li>
+                        <li><a href="#faq">Frequently Asked Questions</a></li>
+                        <li><a href="#reviews">Traveler Reviews</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Trust & Policies -->
+                <div>
+                    <h5 class="footer-heading">Permit Rules &amp; Trust</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="contact.html#rules">Government ID Requirements</a></li>
+                        <li><a href="contact.html#cancellation">Permit Cancellation Policy</a></li>
+                        <li><a href="contact.html#privacy">Privacy &amp; Data Security</a></li>
+                        <li><a href="contact.html#terms">Terms of Facilitation</a></li>
+                    </ul>
+                    <!-- <div
+                        style="margin-top:1.5rem; background:rgba(255,255,255,0.06); padding:1rem; border-radius:12px; border:1px solid rgba(255,255,255,0.1);">
+                        <span
+                            style="font-size:0.75rem; color:var(--safari-gold-light); font-weight:700; text-transform:uppercase; display:block; margin-bottom:0.4rem;">
+                            <i data-lucide="lock"></i> 256-Bit SSL Encrypted
+                        </span>
+                        <p style="font-size:0.75rem; color:#b8b0a2; margin:0;">
+                            All bookings and payments are secured via bank-grade authentication gateways.
+                        </p>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <div>
+                    © 2026 Wild Path Safari. All rights reserved. Made with love for India's wildlife.
+                </div>
+                <div style="display:flex; gap:1.2rem;">
+                    <a href="contact.html#terms">Terms &amp; Conditions</a>
+                    <a href="contact.html#cancellation">Cancellation Policy</a>
+                    <a href="contact.html#privacy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+            <!-- GIANT BRAND WORDMARK BAND -->
+            <div class="jsi-wordmark-band">
+                <div class="jsi-wordmark">Wild Path <span class="jsi-wordmark-accent">SAFARI</span></div>
+            </div>
+    </footer>
+
+    <button class="side-enquiry-tab" id="sideEnquiryTab" type="button" aria-label="Open Safari Inquiry Form">
+        <i data-lucide="message-square"></i> Quick Enquiry
+    </button>
+    <div class="genie-modal-backdrop" id="genieModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="genie-modal-box">
+            <span class="washi-tape"></span>
+            <i data-lucide="send" class="paper-plane-fly" id="paperPlaneFly"></i>
+            <button class="modal-close-btn" id="modalCloseBtn" type="button" aria-label="Close modal">&times;</button>
+            <div class="modal-author-strip">
+                <div class="modal-author-avatar">Js</div>
+                <div class="modal-author-meta">
+                    <span class="modal-author-eyebrow">A Note from Our Team</span>
+                    <span class="modal-author-name">Your Safari Planner</span>
+                </div>
+            </div>
+            <h3 class="modal-title-main">Let's Plan Your <mark style="background:rgba(199,138,59,0.25); padding:0 0.2rem; border-radius:4px;">Next Jungle Safari</mark></h3>
+            <p class="modal-hand-note">Leave your number &amp; I'll call you back myself — no spam, real advice.</p>
+            <form id="genieEnquiryForm">
+                <div class="modal-form-group">
+                    <label class="modal-form-label">Which park are you dreaming of? <span class="req">*</span></label>
+                    <select class="modal-control" id="genieParkSelect" required>
+                        <option value="">Choose a national park...</option>
+                        <option value="jim-corbett">Jim Corbett National Park (Uttarakhand)</option>
+                        <option value="ranthambore">Ranthambore Tiger Reserve (Rajasthan)</option>
+                        <option value="tadoba">Tadoba Andhari Tiger Reserve (Maharashtra)</option>
+                        <option value="kaziranga">Kaziranga National Park (Assam)</option>
+                        <option value="gir-lion">Gir Lion Sanctuary (Gujarat)</option>
+                        <option value="bandhavgarh">Bandhavgarh Tiger Reserve (Madhya Pradesh)</option>
+                        <option value="kanha">Kanha Tiger Reserve (Madhya Pradesh)</option>
+                        <option value="pench">Pench Tiger Reserve (Mowgli Land)</option>
+                    </select>
+                </div>
+                <div class="modal-form-group">
+                    <label class="modal-form-label">What should I call you? <span class="req">*</span></label>
+                    <input type="text" class="modal-control" id="genieName" placeholder="Your Full Name" required>
+                </div>
+                <div class="modal-form-group">
+                    <label class="modal-form-label">Best mobile number to reach you <span class="req">*</span></label>
+                    <input type="tel" class="modal-control" id="geniePhone" placeholder="+91 98765 43210 / WhatsApp" required>
+                </div>
+                <div class="modal-form-row">
+                    <div class="modal-form-group">
+                        <label class="modal-form-label">Any tentative date?</label>
+                        <input type="date" class="modal-control" id="genieDate">
+                    </div>
+                    <div class="modal-form-group">
+                        <label class="modal-form-label">Number of travelers?</label>
+                        <select class="modal-control" id="genieGuests">
+                            <option value="1">1 Traveler</option>
+                            <option value="2" selected>2 Travelers</option>
+                            <option value="3">3 Travelers</option>
+                            <option value="4">4 Travelers</option>
+                            <option value="5">5 Travelers</option>
+                            <option value="6">6 Travelers (Full Gypsy)</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="modal-submit-btn"><span>Send Enquiry Now</span> <i data-lucide="send"></i></button>
+            </form>
+            <div class="modal-foot-trust">
+                <span><i data-lucide="shield-check"></i> 100% Secure</span>
+                <span><i data-lucide="zap"></i> Instant Callback</span>
+                <span><i data-lucide="check-circle-2"></i> No Bots / Spam</span>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="whatsapp-fab" id="floatingWhatsAppBtn" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <nav class="mobile-bottom-dock">
+        <div class="dock-grid">
+            <a href="tel:+919911177045" class="dock-link"><i data-lucide="phone"></i><span>Call Us</span></a>
+            <a href="https://wa.me/919911177045" class="dock-link" target="_blank" rel="noopener"><i class="bi bi-whatsapp" style="color:#25d366;"></i><span>WhatsApp</span></a>
+            <a href="safari-booking.html" class="dock-link"><i data-lucide="calendar-check"></i><span>Book Safari</span></a>
+            <a href="jim-corbett-national-park.html" class="dock-link"><i data-lucide="compass"></i><span>Parks</span></a>
+        </div>
+    </nav>
+
+    <script src="data/parks.js"></script>
+    <script src="data/packages.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    // Render detailed tour package cards from PACKAGES_DATA
+    (function renderPackages() {
+        const container = document.getElementById('packagesDetailContainer');
+        if (!container || typeof PACKAGES_DATA === 'undefined') return;
+
+        // Friendly anchor aliases used by index.html links (#corbett, #tadoba, etc.)
+        const anchorAliasByPkgId = {
+            'pkg-corbett-wilderness': 'corbett',
+            'pkg-tadoba-apex-predator': 'tadoba',
+            'pkg-ranthambore-royal-trail': 'ranthambore',
+            'pkg-kaziranga-rhino-safari': 'kaziranga',
+            'pkg-gir-lion-pride': 'gir',
+            'pkg-mp-golden-triangle': 'central-india'
+        };
+
+        container.innerHTML = PACKAGES_DATA.map(pkg => {
+            const alias = anchorAliasByPkgId[pkg.id] || '';
+            const aliasAnchor = alias ? `<span id="${alias}" style="position:relative; top:-100px;"></span>` : '';
+            const itinerary = (pkg.itinerary || []).map(d => `
+                <div class="itinerary-day">
+                    <h5>Day ${d.day}: ${d.title}</h5>
+                    <p>${d.desc}</p>
+                </div>
+            `).join('');
+            const inclusions = (pkg.inclusions || []).map(i => `<li><i data-lucide="check-circle-2"></i> ${i}</li>`).join('');
+            const exclusions = (pkg.exclusions || []).map(e => `<li><i data-lucide="x-circle"></i> ${e}</li>`).join('');
+            const highlights = (pkg.highlights || []).map(h => `<li class="pkg-highlight-item"><i data-lucide="check-circle-2"></i> ${h}</li>`).join('');
+
+            return `
+            ${aliasAnchor}
+            <article class="pkg-detail-card" id="${pkg.id}">
+                <div class="pkg-detail-head">
+                    <img src="${pkg.featuredImage}" alt="${pkg.title}" loading="lazy">
+                    <div class="pkg-detail-info">
+                        <span class="pkg-badge" style="position:static; display:inline-block; margin-bottom:0.7rem;">${pkg.badge}</span>
+                        <span class="pkg-park-name">${pkg.parkName}</span>
+                        <h2 class="pkg-title" style="font-size:1.5rem;">${pkg.title}</h2>
+                        <div style="display:flex; gap:1rem; flex-wrap:wrap; margin:0.8rem 0;">
+                            <span class="park-feature-tag"><i data-lucide="clock"></i> ${pkg.duration}</span>
+                            <span class="park-feature-tag"><i data-lucide="star" style="color:#e69500;"></i> ${pkg.rating} (${pkg.reviewsCount})</span>
+                            <span class="park-feature-tag"><i data-lucide="tag"></i> ${pkg.category}</span>
+                        </div>
+                        <ul class="pkg-highlights-list">${highlights}</ul>
+                        <div class="pkg-footer" style="margin-top:1.2rem;">
+                            <div class="pkg-price-box">
+                                <span class="pkg-orig-price">₹${pkg.originalPrice.toLocaleString()}</span>
+                                <span class="pkg-final-price">₹${pkg.pricePerPerson.toLocaleString()}</span>
+                                <span class="pkg-per-person">per person (All Inclusive)</span>
+                            </div>
+                            <a href="safari-booking.html?park=${pkg.parkId}" class="btn-safari-gold">Book This Package</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pkg-detail-body">
+                    <h3 class="wizard-section-title" style="margin:1.6rem 0 1.2rem;"><i data-lucide="map"></i> Day-by-Day Itinerary</h3>
+                    ${itinerary}
+                    <div class="incl-excl-grid">
+                        <div>
+                            <h4 style="font-size:1.05rem; color:var(--forest-deep); margin-bottom:0.8rem;"><i data-lucide="check-check" style="color:#16a34a;"></i> What's Included</h4>
+                            <ul class="incl-list">${inclusions}</ul>
+                        </div>
+                        <div>
+                            <h4 style="font-size:1.05rem; color:var(--forest-deep); margin-bottom:0.8rem;"><i data-lucide="alert-octagon" style="color:#dc2626;"></i> Not Included</h4>
+                            <ul class="excl-list">${exclusions}</ul>
+                        </div>
+                    </div>
+                </div>
+            </article>`;
+        }).join('');
+
+        // Initialize lucide icons for dynamic package cards
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+        }
+
+        // Smooth-scroll to hash target (supports friendly aliases) after render
+        if (window.location.hash) {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+            }
+        }
+    })();
+    </script>
+    <script src="js/lucide.min.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/nav-parks.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
+    <script src="js/hotels.js"></script>
+    <script src="js/header.js"></script>
+</body>
+</html>
